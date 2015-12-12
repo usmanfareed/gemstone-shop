@@ -43,7 +43,7 @@ namespace GemshopProject.Admin.Models
                 p.Price = product.Price;
                 p.Description = product.Description;
                 p.Image = product.Image;
-                p.Category.ID = product.Category.ID;
+                p.CategoryID = product.CategoryID;
 
                 db.SaveChanges();
                 return product.Name + "was successfully updated";

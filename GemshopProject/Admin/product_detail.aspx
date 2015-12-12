@@ -50,14 +50,14 @@
             $("#createBtn").on('click', function (e) {
                 e.preventDefault();
                 var Name = $("#product_name").val();
-                var Category = $("#droplist").val();
+                var CategoryID = $("#droplist").val();
                 var Price = $("#product_price").val();
                 var DateAdded = new Date();
                 var AvailableQuantity = $("#product_quantity").val();
                 var Description = $("#product_description").val();
                 var PostData = {
                     Name,
-                    Category,
+                    CategoryID,
                     Price,
                     DateAdded,
                     AvailableQuantity,

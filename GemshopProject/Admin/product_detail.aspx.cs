@@ -39,7 +39,7 @@ namespace GemshopProject.Admin
             var product = new Product();
             product.Name = context.Name;
             product.Price = context.Price;
-            product.Category.ID = 1;
+            product.CategoryID = context.CategoryID;
             product.AvailableQuantity =context.AvailableQuantity;
             product.DateAdded = context.DateAdded;
             product.Description = context.Description;
