@@ -65,6 +65,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -80,6 +81,13 @@
     </Compile>
     <Compile Include="Admin\all_product.aspx.designer.cs">
       <DependentUpon>all_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -488,6 +496,7 @@
     <Content Include="Admin\assets\plugins\x-editable\dist\bootstrap3-editable\img\clear.png" />
     <Content Include="Admin\assets\plugins\x-editable\dist\bootstrap3-editable\img\loading.gif" />
     <Content Include="Admin\assets\plugins\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.min.js" />
+    <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\index.aspx" />
     <Content Include="Admin\index.html" />
     <Content Include="Admin\manage_category.aspx" />
@@ -557,9 +566,6 @@
     <Content Include="fonts\Bitter.html" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
-    <Content Include="images\best_price.html" />
-    <Content Include="images\new_smells.html" />
-    <Content Include="images\only_natural.html" />
     <Content Include="img\bg-primary-menu.png" />
     <Content Include="img\bg-title.png" />
     <Content Include="img\bg_arows.png" />
@@ -695,6 +701,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

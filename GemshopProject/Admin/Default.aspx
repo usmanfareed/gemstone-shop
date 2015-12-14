@@ -1,12 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master_dashboard.master.cs" Inherits="GemshopProject.Admin.master_dashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="GemshopProject.Admin.Default" %>
 
 <!DOCTYPE html>
 
-<<html>
-    
-<!-- Mirrored from coderthemes.com/ubold_1.1/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 30 Nov 2015 04:03:44 GMT -->
-<head>
-        <meta charset="utf-8">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
@@ -14,11 +12,6 @@
         <link rel="shortcut icon" href="assets/images/favicon_1.ico">
 
         <title>Ubold - Responsive Admin Dashboard Template</title>
-
-
-
-        <!--Morris Chart CSS -->
-		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
 
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
@@ -35,40 +28,38 @@
         <![endif]-->
 
         <script src="assets/js/modernizr.min.js"></script>
-            <script src="assets/js/jquery.min.js"></script>
-
-
-
 
 <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','assets/js/analytics.js','ga');
+          })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
 
           ga('create', 'UA-69506598-1', 'auto');
           ga('send', 'pageview');
     </script>
-
-
-    <script>
-        $("#all_product").click(function (e) {
-            e.preventDefault();
-            $("#IndexBody").load("all_product.aspx")
-        });
-    </script>
-
+        
     </head>
 
 
-    <body class="fixed-left">
-
-
+<body class="fixed-left">
+    <form runat="server">
+        <div class="animationload">
+            <div class="loader"></div>
+        </div>
+        
         <!-- Begin page -->
         <div id="wrapper">
 
             <!-- Top Bar Start -->
             <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="text-center">
+                        <a href="index.html" class="logo"><i class="icon-magnet icon-c-logo"></i><span>Ub<i class="md md-album"></i>ld</span></a>
+                    </div>
+                </div>
 
                 <!-- Button mobile view to collapse sidebar menu -->
                 <div class="navbar navbar-default" role="navigation">
@@ -220,20 +211,215 @@
 
             <div class="left side-menu">
                 <div class="sidebar-inner slimscrollleft">
+                    <div class="user-details">
+                        <div class="pull-left">
+                            <img src="assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+                        </div>
+                        <div class="user-info">
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">John Doe <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                            <p class="text-muted m-0">Administrator</p>
+                        </div>
+                    </div>
                     <!--- Divider -->
                     <div id="sidebar-menu">
                         <ul>
 
                         	<li class="text-muted menu-title">Navigation</li>
 
-                            <li class="">
-                                <a href="index.aspx" class="waves-effect waves-light active"> Dashboard </a>
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-home"></i> <span> Dashboard </span> </a>
+                                <ul class="list-unstyled">
+                                    <li><a href="index.html">Dashboard 1</a></li>
+                                    <li><a href="dashboard_2.html">Dashboard 2</a></li>
+                                    <li><a href="dashboard_3.html">Dashboard 3</a></li>
+                                </ul>
                             </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-paint-bucket"></i> <span> UI Kit </span> </a>
+                                <ul class="list-unstyled">
+                                    <li><a href="ui-buttons.html">Buttons</a></li>
+                                    <li><a href="ui-panels.html">Panels</a></li>
+                                    <li><a href="ui-portlets.html">Portlets</a></li>
+                                    <li><a href="ui-checkbox-radio.html">Checkboxs-Radios</a></li>
+                                    <li><a href="ui-tabs.html">Tabs</a></li>
+                                    <li><a href="ui-modals.html">Modals</a></li>
+                                    <li><a href="ui-progressbars.html">Progress Bars</a></li>
+                                    <li><a href="ui-notification.html">Notification</a></li>
+                                    <li><a href="ui-images.html">Images</a></li>
+                                    <li><a href="ui-carousel.html">Carousel</a>
+                                    <li><a href="ui-bootstrap.html">Bootstrap UI</a></li>
+                                    <li><a href="ui-typography.html">Typography</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-light-bulb"></i><span class="label label-primary pull-right">6</span><span> Components </span> </a>
+                                <ul class="list-unstyled">
+                                    <li><a href="components-grid.html">Grid</a></li>
+                                    <li><a href="components-widgets.html">Widgets</a></li>
+                                    <li><a href="components-nestable-list.html">Nesteble</a></li>
+                                    <li><a href="components-range-sliders.html">Range sliders</a></li>
+                                    <li><a href="components-animation.html">Animation</a></li>
+                                    <li><a href="components-sweet-alert.html">Sweet Alerts</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-spray"></i> <span> Icons </span> </a>
+                                <ul class="list-unstyled">
+                                	<li><a href="icons-glyphicons.html">Glyphicons</a></li>
+                                    <li><a href="icons-materialdesign.html">Material Design</a></li>
+                                    <li><a href="icons-ionicons.html">Ion Icons</a></li>
+                                    <li><a href="icons-fontawesome.html">Font awesome</a></li>
+                                    <li><a href="icons-themifyicon.html">Themify Icons</a></li>
+                                    <li><a href="icons-simple-line.html">Simple line Icons</a></li>
+                                    <li><a href="icons-weather.html">Weather Icons</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-pencil-alt"></i><span> Forms </span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="form-elements.html">General Elements</a></li>
+                                    <li><a href="form-advanced.html">Advanced Form</a></li>
+                                    <li><a href="form-validation.html">Form Validation</a></li>
+                                    <li><a href="form-pickers.html">Form Pickers</a></li>
+                                    <li><a href="form-wizard.html">Form Wizard</a></li>
+                                    <li><a href="form-mask.html">Form Masks</a></li>
+                                    <li><a href="form-summernote.html">Summernote</a></li>
+                                    <li><a href="form-wysiwig.html">Wysiwig Editors</a></li>
+                                    <li><a href="form-uploads.html">Multiple File Upload</a></li>
+                                    <li><a href="form-xeditable.html">X-editable</a></li>
+                                    <li><a href="form-image-crop.html">Image Crop</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-menu-alt"></i><span>Tables </span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="tables-basic.html">Basic Tables</a></li>
+                                    <li><a href="tables-datatable.html">Data Table</a></li>
+                                    <li><a href="tables-editable.html">Editable Table</a></li>
+                                    <li><a href="tables-responsive.html">Responsive Table</a></li>
+                                    <li><a href="tables-foo-tables.html">FooTable</a></li>
+                                    <li><a href="tables-bootstrap.html">Bootstrap Tables</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-bar-chart"></i><span class="label label-pink pull-right">10</span><span> Charts </span></a>
+                                <ul class="list-unstyled">
+                                	<li><a href="chart-flot.html">Flot Chart</a></li>
+                                    <li><a href="chart-morris.html">Morris Chart</a></li>
+                                    <li><a href="chart-chartjs.html">Chartjs</a></li>
+                                    <li><a href="chart-peity.html">Peity Charts</a></li>
+                                    <li><a href="chart-chartist.html">Chartist Charts</a></li>
+                                    <li><a href="chart-c3.html">C3 Charts</a></li>
+                                    <li><a href="chart-nvd3.html"> Nvd3 Charts</a></li>
+                                    <li><a href="chart-sparkline.html">Sparkline charts</a></li>
+                                    <li><a href="chart-radial.html">Radial charts</a></li>
+                                    <li><a href="chart-other.html">Other Chart</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-location-pin"></i><span> Maps </span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="map-google.html"> Google Map</a></li>
+                                    <li><a href="map-vector.html"> Vector Map</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="text-muted menu-title">More</li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-files"></i><span> Pages </span></a>
+                                <ul class="list-unstyled">
+                                	<li><a href="page-starter.html">Starter Page</a></li>
+                                    <li><a href="page-login.html">Login</a></li>
+                                    <li><a href="page-login-v2.html">Login v2</a></li>
+                                    <li><a href="page-register.html">Register</a></li>
+                                    <li><a href="page-register-v2.html">Register v2</a></li>
+                                    <li><a href="page-signup-signin.html">Signin - Signup</a></li>
+                                    <li><a href="page-recoverpw.html">Recover Password</a></li>
+                                    <li><a href="page-lock-screen.html">Lock Screen</a></li>
+                                    <li><a href="page-400.html">Error 400</a></li>
+                                    <li><a href="page-403.html">Error 403</a></li>
+                                    <li><a href="page-404.html">Error 404</a></li>
+                                    <li><a href="page-404_alt.html">Error 404-alt</a></li>
+                                    <li><a href="page-500.html">Error 500</a></li>
+                                    <li><a href="page-503.html">Error 503</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-gift"></i><span> Extras </span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="extra-profile.html">Profile</a></li>
+                                    <li><a href="extra-timeline.html">Timeline</a></li>
+                                    <li><a href="extra-sitemap.html">Site map</a></li>
+                                    <li><a href="extra-invoice.html">Invoice</a></li>
+                                    <li><a href="extra-email-template.html">Email template</a></li>
+                                    <li><a href="extra-maintenance.html">Maintenance</a></li>
+                                    <li><a href="extra-coming-soon.html">Coming-soon</a></li>
+                                    <li><a href="extra-faq.html">FAQ</a></li>
+                                    <li><a href="extra-search-result.html">Search result</a></li>
+                                    <li><a href="extra-gallery.html">Gallery</a></li>
+                                    <li><a href="extra-pricing.html">Pricing</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light"><i class="ti-crown"></i><span class="label label-success pull-right">3</span><span> Apps </span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="apps-inbox.html"> Email</a></li>
+                                    <li><a href="apps-calendar.html"> Calendar</a></li>
+                                    <li><a href="apps-contact.html"> Contact</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light active"><i class="ti-widget"></i><span> Layouts </span></a>
+                                <ul class="list-unstyled">
+                                    <li class="active"><a href="layout-leftbar_2.html"> Leftbar with User</a></li>
+                                    <li><a href="layout-menu-collapsed.html"> Menu Collapsed</a></li>
+                                    <li><a href="layout-menu-small.html"> Small Menu</a></li>
+                                    <li><a href="layout-header_2.html"> Header style</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect waves-light"><i class="ti-share"></i><span>Multi Level </span></a>
+                                <ul>
+                                    <li class="has_sub">
+                                        <a href="javascript:void(0);" class="waves-effect waves-light"><span>Menu Level 1.1</span> </a>
+                                        <ul style="">
+                                            <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
+                                            <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
+                                            <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="text-muted menu-title">Extra</li>
 
                             <li class="has_sub">
                                 <a href="#" class="waves-effect waves-light"><i class="ti-user"></i><span> Crm </span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="all_product.aspx"> Dashboard </a></li>
+                                    <li><a href="crm-dashboard.html"> Dashboard </a></li>
                                     <li><a href="crm-contact.html"> Contacts </a></li>
                                     <li><a href="crm-opportunities.html"> Opportunities </a></li>
                                     <li><a href="crm-leads.html"> Leads </a></li>
@@ -242,12 +428,13 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect waves-light "><i class="ti-shopping-cart"></i><span> eCommerce </span></a>
+                                <a href="#" class="waves-effect waves-light"><i class="ti-shopping-cart"></i><span> eCommerce </span></a>
                                 <ul class="list-unstyled">
-                                    <li id="category"><a href="manage_category.aspx"> Category</a></li>
-                                    <li id="all_product"><a href="all_product.aspx"> Products</a></li>
-                                    <li id="product_detail"><a href="product_detail.aspx"> Product Detail</a></li>
-                                    <li id="product_order"><a href="product_order.aspx"> Orders</a></li>
+                                    <li><a href="ecommerce-dashboard.html"> Dashboard</a></li>
+                                    <li><a href="ecommerce-products.html"> Products</a></li>
+                                    <li><a href="ecommerce-product-detail.html"> Product Detail</a></li>
+                                    <li><a href="ecommerce-orders.html"> Orders</a></li>
+                                    <li><a href="ecommerce-sellers.html"> Sellers</a></li>
                                 </ul>
                             </li>
 
@@ -257,32 +444,11 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <!-- Left Sidebar End -->
+            <!-- Left Sidebar End --> 
 
 
 
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-
-                               
-            
-<%--             <form id="form1" runat="server">--%>
-     
-
-            <div id="body_div">
-
-                <asp:ContentPlaceHolder ID="IndexBody" runat="server"></asp:ContentPlaceHolder>
-
-            </div>
-
-<%--                 </form>--%>
-
-
-
-            <!-- ============================================================== -->
-            <!-- End Right content here -->
-            <!-- ============================================================== -->
+      
 
 
             <!-- Right Sidebar -->
@@ -390,7 +556,7 @@
                             </a>
                             <span class="clearfix"></span>
                         </li>
-                    </ul>
+                    </ul>  
                 </div>
             </div>
             <!-- /Right-bar -->
@@ -398,18 +564,17 @@
         </div>
         <!-- END wrapper -->
 
-
-
-      
-      <script>
+        </form>
+    
+        <script>
             var resizefunc = [];
         </script>
 
         <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/detect.js"></script>
         <script src="assets/js/fastclick.js"></script>
-
         <script src="assets/js/jquery.slimscroll.js"></script>
         <script src="assets/js/jquery.blockUI.js"></script>
         <script src="assets/js/waves.js"></script>
@@ -417,52 +582,12 @@
         <script src="assets/js/jquery.nicescroll.js"></script>
         <script src="assets/js/jquery.scrollTo.min.js"></script>
 
-        <script src="assets/plugins/peity/jquery.peity.min.js"></script>
-
-        <!-- jQuery  -->
-        <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
-        <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
-
-
-
-        <script src="assets/plugins/morris/morris.min.js"></script>
-        <script src="assets/plugins/raphael/raphael-min.js"></script>
-
-        <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
-
-        <script src="assets/pages/jquery.dashboard.js"></script>
 
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
 
-        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $('.counter').counterUp({
-                    delay: 100,
-                    time: 1200
-                });
-
-                $(".knob").knob();
-
-            });
-        </script>
-
-
-
-<%--       <script>
-          $(document).ready(function () {
-          $("#all_product").click(function (e) {
-          e.preventDefault();
-          $("#body_div").load("all_product.aspx")
-    });
-});
-        
-    </script>--%>
-
-
-
-
+    
     </body>
 
-<!-- Mirrored from coderthemes.com/ubold_1.1/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 30 Nov 2015 04:05:51 GMT -->
+<!-- Mirrored from coderthemes.com/ubold_1.1/dark/layout-leftbar_2.html by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 30 Nov 2015 04:11:05 GMT -->
 </html>
