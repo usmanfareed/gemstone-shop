@@ -17,57 +17,39 @@ namespace GemshopProject.Admin
 
     public partial class product_detail : System.Web.UI.Page
     {
-        
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!IsPostBack)
+            {
+                //Check if url contains id parameter 
+                if (!String.IsNullOrWhiteSpace(Request.QueryString["id"]))
+                {
+                    // if id exists update current row
+                    int id = Convert.ToInt32(Request.QueryString["id"]);
+                    FillPage(id);
+                }
+            }
 
-        //[WebMethod]
-        //public static List<Category> get_category_list()
-        //{
-            
-        //    List<Category> list = new List<Category>();
-        //    using (ShopDBContext db = new ShopDBContext())
-        //    {
-        //        list = db.Categories.ToList(); 
-        //    }
-        //    return list;
-        //}
 
-
-        //[WebMethod ]
-        //public string insert_product(Product context)
-        //{
-
-        //    string filename = Path.GetFileName(import_image.FileName);
-        //    import_image.SaveAs(Server.MapPath("~/images/") + filename);
-        //    string path = "/images/" + filename;
-        //    StatusLabel.Text = path;
-        //    var product = new Product();
-        //    product.Name = context.Name;
-        //    product.Price = context.Price;
-        //    product.CategoryID = context.CategoryID;
-        //    product.AvailableQuantity =context.AvailableQuantity;
-        //    product.DateAdded = context.DateAdded;
-        //    product.Description = context.Description;
-        //    product.Image =context.Image;
-        //    ProductModel db = new ProductModel();
-        //    db.insert_product(product);
-        //    return "Success";
-
-        //}
+        }
 
         protected void createBtn_Click(object sender, EventArgs e)
         {
-            string path=null;
+            ProductModel db = new ProductModel();
+            Product p = create_product();
+            // this is will upload and save image to server
+            string path = null;
             try
             {
                 if (import_image.PostedFile.ContentType == "image/jpeg")
                 {
-                  
-                        string filename = Path.GetFileName(import_image.FileName);
-                        import_image.SaveAs(Server.MapPath("~/images/") + filename);
-                        path = "/images/" + filename;
-                        StatusLabel.Text = path;
-                        
-                   
+
+                    string filename = Path.GetFileName(import_image.FileName);
+                    import_image.SaveAs(Server.MapPath("~/images/") + filename);
+                    path = "/images/" + filename;
+                    StatusLabel.Text = path;
+
+
                 }
                 else
                 {
@@ -79,12 +61,48 @@ namespace GemshopProject.Admin
                 StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
             }
 
-            ProductModel db = new ProductModel();
-            Product p = create_product();
-            p.Image = path;
-            db.insert_product(p);
 
+            //Check if url contains id parameter 
+            if (!String.IsNullOrWhiteSpace(Request.QueryString["id"]))
+            {
+                // if id exists update current row
+                DateTime date_added = DateTime.Now;
+
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                p.DateUpdated = Convert.ToString(date_added);
+               
+                p.Image = path;
+                db.update_product(id, p);
+            }
+            //if id donsnt exit create new row
+            else
+            {
+
+
+                p.Image = path;
+                db.insert_product(p);
+            }
         }
+
+
+        private void FillPage(int id)
+        {
+            // get data from the given id
+             
+            ProductModel db = new ProductModel();
+            Product product = db.get_product(id);
+
+            // fill text boxes with the new data
+
+            product_name.Text = product.Name;
+            product_price.Text = Convert.ToString(product.Price);
+            product_quantity.Text = Convert.ToString(product.AvailableQuantity);
+            product_description.Text = product.Description;
+
+            // set dropdown values
+            droplist.SelectedValue = Convert.ToString(product.CategoryID);
+        }
+
 
         private Product create_product()
         {
@@ -99,56 +117,81 @@ namespace GemshopProject.Admin
             return product;
         }
 
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //public void uploadBtn_Click(object sender, EventArgs e)
-        //{
 
-        //    if (!IsPostBack)
-        //    {
-        //        Thread newThread = new Thread(new ThreadStart(ThreadMethod));
-        //        newThread.SetApartmentState(ApartmentState.STA);
-        //        newThread.Start();
-        //    }
-        //}
 
-        //static void ThreadMethod()
 
-        //{
 
-        //        OpenFileDialog img = new OpenFileDialog();
-        //        img.Title = "Please select a photo";
-        //        img.Filter = "JPG|*.JPG|PNG|*.png|GIF|*gif";
-        //        img.Multiselect = false;
-        //        img.ShowDialog();
-        //    }
 
+
+
+
+
+
+
+        
 
     }
 }
+
+
+
+
+
+
+//[WebMethod]
+//public static List<Category> get_category_list()
+//{
+
+//    List<Category> list = new List<Category>();
+//    using (ShopDBContext db = new ShopDBContext())
+//    {
+//        list = db.Categories.ToList(); 
+//    }
+//    return list;
+//}
+
+
+//[WebMethod ]
+//public string insert_product(Product context)
+//{
+
+//    string filename = Path.GetFileName(import_image.FileName);
+//    import_image.SaveAs(Server.MapPath("~/images/") + filename);
+//    string path = "/images/" + filename;
+//    StatusLabel.Text = path;
+//    var product = new Product();
+//    product.Name = context.Name;
+//    product.Price = context.Price;
+//    product.CategoryID = context.CategoryID;
+//    product.AvailableQuantity =context.AvailableQuantity;
+//    product.DateAdded = context.DateAdded;
+//    product.Description = context.Description;
+//    product.Image =context.Image;
+//    ProductModel db = new ProductModel();
+//    db.insert_product(product);
+//    return "Success";
+
+//}
+
+
+//public void uploadBtn_Click(object sender, EventArgs e)
+//{
+
+//    if (!IsPostBack)
+//    {
+//        Thread newThread = new Thread(new ThreadStart(ThreadMethod));
+//        newThread.SetApartmentState(ApartmentState.STA);
+//        newThread.Start();
+//    }
+//}
+
+//static void ThreadMethod()
+
+//{
+
+//        OpenFileDialog img = new OpenFileDialog();
+//        img.Title = "Please select a photo";
+//        img.Filter = "JPG|*.JPG|PNG|*.png|GIF|*gif";
+//        img.Multiselect = false;
+//        img.ShowDialog();
+//    }

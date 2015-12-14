@@ -13,5 +13,17 @@ namespace GemshopProject.Admin
         {
 
         }
+
+        protected void ProductsGrid_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            //Get Selected row 
+            GridViewRow row = ProductsGrid.Rows[e.NewEditIndex];
+
+            //Get id of selected product
+            int rowId = Convert.ToInt32(row.Cells[0].Text);
+
+            //Redirect user to all products with the selected rowId
+            Response.Redirect("~/Admin/product_detail.aspx?id=" + rowId);
+        }
     }
 }

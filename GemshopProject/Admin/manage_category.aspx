@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/master_dashboard.Master" AutoEventWireup="true" CodeBehind="manage_category.aspx.cs" Inherits="GemshopProject.Admin.manage_category" %>
 <asp:Content ID="manage_category" ContentPlaceHolderID="IndexBody" runat="server">
+    <form id="form1" runat="server">
+
+    		
 
     		<!-- Plugin Css-->
         <link rel="stylesheet" href="assets/plugins/magnific-popup/dist/magnific-popup.css" />
@@ -8,10 +11,26 @@
        <!-- Modal-Effect -->
         <script src="assets/plugins/custombox/dist/custombox.min.js"></script>
         <script src="assets/plugins/custombox/dist/legacy.min.js"></script>
+                <%--Script--%>
+       <script>
+            var resizefunc = [];
+        </script>
 
 
+       <script src="assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+	    <script src="assets/plugins/jquery-datatables-editable/jquery.dataTables.js"></script> 
+	    <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
+	    <script src="assets/plugins/tiny-editable/mindmup-editabletable.js"></script>
+	    <script src="assets/plugins/tiny-editable/numeric-input-example.js"></script>
+	    
+	    
+	    <script src="assets/pages/datatables.editable.init.js"></script>
+	    
+	    
+        
 
-        <script>222
+
+        <script>
         $(document).ready(function () {
             $("#createBtn").on('click', function (e) {
                 e.preventDefault();
@@ -38,6 +57,27 @@
 
             });
         });
+
+        
+            
+
+    </script>
+
+            <script>
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('addBtn').addEventListener('click', function (e) {
+                Custombox.open({
+                    target: '#custom-modal',
+                    effect: 'fadein',
+                    
+
+                });
+                e.preventDefault();
+            });
+        });
+
 
     </script>
 
@@ -71,37 +111,38 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="m-b-30">
-<%--                                            <button id="addToTable" class="btn btn-default waves-effect waves-light">Add <i class="fa fa-plus"></i></button>--%>
-                                            <a href="#custom-modal" class="btn btn-default btn-md waves-effect waves-light m-b-30" data-animation="fadein" data-plugin="custommodal" 
-			                                                    	data-overlaySpeed="200" data-overlayColor="#36404a"><i class="md md-add"></i> Add Category</a>
+                                            <button  id="addBtn" class="btn btn-default btn-md waves-effect waves-light m-b-30" > Add Category</button>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="">
-                                	<table class="table table-striped" id="datatable-editable">
-	                                    <thead>
-	                                        <tr>
-	                                            <th>Category Name</th>
-	                                            <th>Description</th>
-	                                        </tr>
-	                                    </thead>
-	                                    <tbody>
-	                                        <tr class="gradeX">
-	                                            <td>Trident</td>
-	                                            <td>Internet Explorer 4.0</td>
-	                                            <td class="actions">
-	                                                <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-	                                                <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-	                                                <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-	                                                <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-	                                            </td>
-	                                        </tr>
-	                                       
+                                <asp:GridView ID="CategoriesGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" Width="100%">
+                                    <Columns>
+                                        <asp:BoundField DataField="ID" HeaderText="  ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                                        <asp:BoundField DataField="Name" HeaderText="  Name" SortExpression="Name" />
+                                        <asp:BoundField DataField="Description" HeaderText="  Description" SortExpression="Description" />
+                                        <asp:CommandField HeaderText="   Action" ShowDeleteButton="True" ShowEditButton="True" />
 
-	                                    </tbody>
-	                                </table>
-                                </div>
+                                    </Columns>
+                                </asp:GridView>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Integrated Security=True" DeleteCommand="Delete  FROM [GemshopDatabase].[dbo].[Categories]
+where  [ID] = @ID" InsertCommand="INSERT INTO [GemshopDatabase].[dbo].[Categories] ( [Name],  [Description]) VALUES (@Name, @Description)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT *
+  FROM [GemshopDatabase].[dbo].[Categories]" UpdateCommand="UPDATE [GemshopDatabase].[dbo].[Categories] SET  [Name] = @Name, [Description] = @Description
+ WHERE [ID] = @ID">
+                                    <DeleteParameters>
+                                        <asp:Parameter Name="ID" />
+                                    </DeleteParameters>
+                                    <InsertParameters>
+                                        <asp:Parameter Name="Name" />
+                                        <asp:Parameter Name="Description" />
+                                    </InsertParameters>
+                                    <UpdateParameters>
+                                        <asp:Parameter Name="Name" />
+                                        <asp:Parameter Name="Description" />
+                                        <asp:Parameter Name="ID" />
+                                    </UpdateParameters>
+                                </asp:SqlDataSource>
+                                
+                                
                             </div>
                             <!-- end: page -->
 
@@ -138,7 +179,6 @@
                             <input type="text" class="form-control" id="category_description" placeholder="Enter name">
                         </div>
                         
-                        
                         <button type="submit" id="createBtn" class="btn btn-default waves-effect waves-light">Save</button>
                         <button type="button" onclick="Custombox.close();" class="btn btn-danger waves-effect waves-light m-l-10">Cancel</button>
                     </div>
@@ -171,26 +211,8 @@
             <!-- end Modal -->
 
 
-    <%--Script--%>
-       <script>
-            var resizefunc = [];
-        </script>
-
-
-       <script src="assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-	    <script src="assets/plugins/jquery-datatables-editable/jquery.dataTables.js"></script> 
-	    <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
-	    <script src="assets/plugins/tiny-editable/mindmup-editabletable.js"></script>
-	    <script src="assets/plugins/tiny-editable/numeric-input-example.js"></script>
-	    
-	    
-	    <script src="assets/pages/datatables.editable.init.js"></script>
-	    
-	    <script>
-			$('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
-			
-		</script>
-        
+    
         
 
+            </form>
 </asp:Content>

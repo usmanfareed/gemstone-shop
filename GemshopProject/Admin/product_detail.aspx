@@ -173,7 +173,7 @@
 
                                                     <div class="form-group m-b-20">
                                                         <label>Product Description <span class="text-danger">*</span></label>
-                                                        <asp:TextBox id="product_description" class="form-control" rows="5" placeholder="Please enter description" runat="server" Height="85px" TextMode="MultiLine"></asp:TextBox>
+                                                        <asp:TextBox id="product_description" class="form-control" rows="5" placeholder="Please enter description" runat="server" Height="85px" TextMode="MultiLine" Width="700px"></asp:TextBox>
                                                     </div>
 
 

@@ -44,8 +44,13 @@ namespace GemshopProject.Admin.Models
                 p.Name = product.Name;
                 p.Price = product.Price;
                 p.Description = product.Description;
-                p.Image = product.Image;
                 p.CategoryID = product.CategoryID;
+                p.DateUpdated = product.DateUpdated;
+
+                if (product.Image != null)
+                {
+                    p.Image = product.Image;
+                }
 
                 db.SaveChanges();
                 return product.Name + "was successfully updated";
@@ -85,20 +90,74 @@ namespace GemshopProject.Admin.Models
         }
 
 
-        public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        public Product get_product (int id)
         {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
-            return ms.ToArray();
+            try
+            {
+                using (ShopDBContext db = new ShopDBContext())
+                {
+                    Product product = db.Products.Find(id);
+                    return product;
+                }
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
         }
 
-        public Image byteArrayToImage(byte[] byteArrayIn)
+
+        public List<Product> get_all_products()
         {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
+            try
+            {
+                  using (ShopDBContext db = new ShopDBContext())
+                  {
+                    List<Product> products = (from x in db.Products
+                                              select x).ToList();
+                    return products;
+                  }
+                }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
         }
 
+        public List <Product> get_product_by_type(int catID)
+        {
+            using (ShopDBContext db = new ShopDBContext())
+            {
+                List<Product> products = (from x in db.Products
+                                          where x.CategoryID == catID
+                                          select x).ToList();
+                return products;
+            }
+        }
     }
 
 }
+
+
+
+
+
+
+
+
+//public byte[] imageToByteArray(System.Drawing.Image imageIn)
+//{
+//    MemoryStream ms = new MemoryStream();
+//    imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+//    return ms.ToArray();
+//}
+
+//public Image byteArrayToImage(byte[] byteArrayIn)
+//{
+//    MemoryStream ms = new MemoryStream(byteArrayIn);
+//    Image returnImage = Image.FromStream(ms);
+//    return returnImage;
+//}

@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/master_dashboard.Master" AutoEventWireup="true" CodeBehind="all_product.aspx.cs" Inherits="GemshopProject.Admin.all_product" %>
 <asp:Content ID="all_product" ContentPlaceHolderID="IndexBody" runat="server">
 
+                <form id="form1" runat="server">
+
                 <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
@@ -21,375 +23,82 @@
 							</div>
 						</div>
 
-                        <!-- SECTION FILTER
-                        ================================================== -->
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 ">
-                                <div class="portfolioFilter">
-                                    <a href="#" data-filter="*" class="current">All</a>
-                                    <a href="#" data-filter=".mobiles">Mobiles</a>
-                                    <a href="#" data-filter=".tablets">Tablets</a>
-                                    <a href="#" data-filter=".desktops">Desktops</a>
-                                    <a href="#" data-filter=".other">Other</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row port">
-                            <div class="portfolioContainer m-b-15">
-                                <div class="col-sm-6 col-lg-3 col-md-4 mobiles">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/1.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/1.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Samsung Gallaxy</a> </h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star-o" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 other">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/2.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/2.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Branded camera A1254</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star-half-o" href="#"></a></li>
-                                                    <li><a class="fa fa-star-o" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 mobiles">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/3.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/3.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Samsung Gallaxy</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 desktops">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/4.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/4.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Apple iMac 27"</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star-o" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 mobiles">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/5.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/5.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Sony xperia Aqua M4</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star-o" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 other">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/6.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/6.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Branded headphone UB07</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star-half-o" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 tablets">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/7.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/7.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Apple iPad</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star-o" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 desktops">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/8.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/8.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Branded Laptop</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star-o" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 mobiles">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/1.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/1.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Samsung Gallaxy</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star-o" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 other">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/2.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/2.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Branded camera A1254</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star-half-o" href="#"></a></li>
-                                                    <li><a class="fa fa-star-o" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 mobiles">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/3.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/3.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Samsung Gallaxy</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-3 col-md-4 desktops">
-                                    <div class="product-list-box thumb">
-                                        <a href="assets/images/products/big/4.jpg" class="image-popup" title="Screenshot-1">
-                                            <img src="assets/images/products/big/4.jpg" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn btn-success btn-sm"><i class="md md-mode-edit"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm"><i class="md md-close"></i></a>
-                                        </div>
-
-                                        <div class="detail">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-dark">Apple iMac 27"</a></h4>
-                                            <div class="rating">
-                                                <ul class="list-inline">
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star" href="#"></a></li>
-                                                    <li><a class="fa fa-star-o" href="#"></a></li>
-                                                </ul>
-                                            </div>
-
-                                            <h5 class="m-0"><span class="text-custom">$ 125</span> <span class="text-muted m-l-15"> Stock :98pcs.</span></h5>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-                            </div>
-                        </div> <!-- End row -->
-
-
-
-
-                    </div> <!-- container -->
+                       
                                
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
                 </footer>
 
+                    <asp:GridView CssClass="table table-bordered dataTable no-footer" ID="ProductsGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="90%" OnRowEditing="ProductsGrid_RowEditing" DataKeyNames="ID" ForeColor="#666666" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                        <Columns>
+                            <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
+                            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"/>
+                            <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                            <asp:BoundField DataField="AvailableQuantity" HeaderText="Quantity" SortExpression="AvailableQuantity" />
+                            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                            <asp:BoundField DataField="Image" HeaderText="Image" SortExpression="Image" />
+                            <asp:BoundField DataField="DateUpdated" HeaderText="DateUpdated" SortExpression="DateUpdated" />
+                            <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" />
+                            <asp:CommandField HeaderText="Action" ShowDeleteButton="True" ShowEditButton="True" />
+
+                        </Columns>
+                        <FooterStyle BackColor="White" ForeColor="#333333" />
+                        <HeaderStyle BackColor="#6afbcc" Font-Bold="True" ForeColor="#666666" />
+                        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#ccffcc" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                        <SortedAscendingHeaderStyle BackColor="#487575" />
+                        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                        <SortedDescendingHeaderStyle BackColor="#275353" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Integrated Security=True" DeleteCommand="Delete  FROM [GemshopDatabase].[dbo].[Products]
+where  [ID] = @ID" InsertCommand="INSERT INTO [GemshopDatabase].[dbo].[Products] 
+( [Name]
+      ,[Price]
+      ,[AvailableQuantity]
+      ,[Description]
+      ,[Image]
+      ,[DateUpdated]
+      ,[CategoryID]) 
+VALUES (@Name,@Price,@AvailableQuantity, @Description,@Image,@DateUpdated,@CategoryID)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT
+        [ID] 
+      ,[Name]
+      ,[Price]
+      ,[AvailableQuantity]
+      ,[Description]
+      ,[Image]
+      ,[DateUpdated]
+      ,[CategoryID]
+  FROM [GemshopDatabase].[dbo].[Products]" UpdateCommand="UPDATE [GemshopDatabase].[dbo].[Categories] SET ( [Name] ,[Price] ,[AvailableQuantity] ,[Description] ,[Image] ,[DateUpdated] ,[CategoryID]) VALUES (@Name,@Price,@AvailableQuantity, @Description,@Image,@DateUpdated,@CategoryID) 
+WHERE [ID] = @ID">
+                        <DeleteParameters>
+                            <asp:Parameter Name="ID" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="Name" />
+                            <asp:Parameter Name="Price" />
+                            <asp:Parameter Name="AvailableQuantity" />
+                            <asp:Parameter Name="Description" />
+                            <asp:Parameter Name="Image" />
+                            <asp:Parameter Name="DateUpdated" />
+                            <asp:Parameter Name="CategoryID" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="Name" />
+                            <asp:Parameter Name="Price" />
+                            <asp:Parameter Name="AvailableQuantity" />
+                            <asp:Parameter Name="Description" />
+                            <asp:Parameter Name="Image" />
+                            <asp:Parameter Name="DateUpdated" />
+                            <asp:Parameter Name="CategoryID" />
+                            <asp:Parameter Name="ID" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
+
             </div>
 
 
+                </form>
 </asp:Content>
