@@ -30,7 +30,6 @@
     <script src="js/jquery.anythingslider.fx.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
     <div>
         <div id="top">
         <div class="container_12">
@@ -242,6 +241,5 @@
         </div><!-- .footer_info -->
     </footer>
     </div>
-    </form>
 </body>
 </html>

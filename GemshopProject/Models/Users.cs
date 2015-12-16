@@ -23,7 +23,7 @@ public class Users
 
     public string Status { get; set; }
 
-    virtual public List<Purchase> purchases { get; set; }
-    virtual public Users_groups user_groups { get; set; }
+     public List<Purchase> purchases { get; set; }
+     public Users_groups user_groups { get; set; }
     }
 }

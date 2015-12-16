@@ -82,13 +82,6 @@
     <Compile Include="Admin\all_product.aspx.designer.cs">
       <DependentUpon>all_product.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,6 +119,9 @@
     </Compile>
     <Compile Include="Admin\product_order.aspx.designer.cs">
       <DependentUpon>product_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_db.cs" />
@@ -496,13 +492,13 @@
     <Content Include="Admin\assets\plugins\x-editable\dist\bootstrap3-editable\img\clear.png" />
     <Content Include="Admin\assets\plugins\x-editable\dist\bootstrap3-editable\img\loading.gif" />
     <Content Include="Admin\assets\plugins\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.min.js" />
-    <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\index.aspx" />
     <Content Include="Admin\index.html" />
     <Content Include="Admin\manage_category.aspx" />
     <Content Include="Admin\product_detail.aspx" />
     <Content Include="Admin\product_order.aspx" />
     <Content Include="Index.master" />
+    <Content Include="product_detail.aspx" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -639,7 +635,7 @@
     <Content Include="img\top.png" />
     <Content Include="img\update.png" />
     <Content Include="img\wishlist.png" />
-    <Content Include="web_pages\index.html" />
+    <Content Include="index.html" />
     <Content Include="js\checkbox.js" />
     <Content Include="js\html5.js" />
     <Content Include="js\jquery-1.8.3.min.js" />
@@ -657,7 +653,7 @@
     <Content Include="loginPage.aspx" />
     <Content Include="looseGemstones.aspx" />
     <Content Include="mineral_crystal.aspx" />
-    <Content Include="web_pages\product_page.html" />
+    <Content Include="product_page.html" />
     <Content Include="registrationPage.aspx" />
     <Content Include="roughGemstones.aspx" />
     <Content Include="web_pages\shopping_cart.html" />
@@ -688,6 +684,13 @@
     <Compile Include="mineral_crystal.aspx.cs">
       <DependentUpon>mineral_crystal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product_detail.aspx.cs">
+      <DependentUpon>product_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product_detail.aspx.designer.cs">
+      <DependentUpon>product_detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registrationPage.aspx.cs">

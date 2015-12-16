@@ -7,9 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GemshopProject.Admin {
-    
-    
-    public partial class Default {
-    }
+
+
+public partial class Home {
 }

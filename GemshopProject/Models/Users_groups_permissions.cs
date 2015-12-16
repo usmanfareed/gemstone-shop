@@ -13,6 +13,6 @@ namespace GemshopProject.Models
     {
         public int ID { get; set; }
         public int Permission { get; set; }
-       virtual public Users_groups User_groups { get; set; }
+        public Users_groups User_groups { get; set; }
     }
 }

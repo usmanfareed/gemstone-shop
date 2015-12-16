@@ -5,8 +5,6 @@
 <asp:Content ID="product_detail" ContentPlaceHolderID="IndexBody" runat="server">
     <form id="form2" runat="server">
 
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
 
     <script>
 
@@ -26,12 +24,12 @@
                         success: OnSuccess,
                     });
                     function OnSuccess(data) {
-            $('#droplist').empty();
-            var d = data.d;
-            var dropdown = $('#droplist');
-            for (var i = 0; i < d.length ; i++) {
-                if(d[i].Name != null){
-                dropdown.append(
+                    $('#droplist').empty();
+                    var d = data.d;
+                    var dropdown = $('#droplist');
+                    for (var i = 0; i < d.length ; i++) {
+                    if(d[i].Name != null){
+                    dropdown.append(
 
                      $('<option></option>').val(d[i].ID.toString()).html(d[i].Name.toString())
                     );

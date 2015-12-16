@@ -17,7 +17,7 @@ namespace GemshopProject.Models
         public string DateTime { get; set; }
 
 
-        virtual public Users Users { get; set; }
-        virtual public Product Products { get; set; }
+         public Users Users { get; set; }
+         public Product Products { get; set; }
     }
 }

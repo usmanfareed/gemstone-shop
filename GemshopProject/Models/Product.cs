@@ -22,8 +22,8 @@ namespace GemshopProject.Models
         public string DateUpdated { get; set; }
         public string UpdatedBy { get; set; }
         public int CategoryID { get; set; }
-        virtual public Category Category { get; set; }
-        virtual public List<Purchase> purchases { get; set; }
+        public Category Category { get; set; }
+        public List<Purchase> purchases { get; set; }
 
     }
 }

@@ -182,7 +182,8 @@ $(document).ready(function() {
     });
     
     // Animations product
-    $(function() {
+        $(document).ready(function () {
+
 	$(".article").hover(
             function(){
                 var self = this;

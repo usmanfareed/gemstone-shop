@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace GemshopProject.Admin
+namespace GemshopProject
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class product_detail : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

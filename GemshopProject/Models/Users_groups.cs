@@ -14,7 +14,7 @@ namespace GemshopProject.Models
         public int ID { get; set; }
         public int Name { get; set; }
         public int Description { get; set; }
-        virtual public List<Users> Users { get; set; }
-        virtual public List<Users_groups_permissions> Users_groups_permissions { get; set; }
+         public List<Users> Users { get; set; }
+         public List<Users_groups_permissions> Users_groups_permissions { get; set; }
     }
 }

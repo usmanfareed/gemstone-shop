@@ -2226,7 +2226,7 @@ img.sale {
     height: 60px;
     overflow: hidden;
     position: relative;
-    width: 217px;
+    background-color:teal;
 }
 .products article .cart .price {
     color:#ec6f54;
@@ -2240,6 +2240,7 @@ img.sale {
     width: 92px;
 }
 .products article .cart .price .vert {
+    color:white;
     display: table-cell;
     height: 60px;
     vertical-align: middle;
