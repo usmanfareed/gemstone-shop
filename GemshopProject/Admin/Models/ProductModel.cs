@@ -90,12 +90,34 @@ namespace GemshopProject.Admin.Models
         }
 
 
-        public Product get_product (int id)
+        public List<Product> get_product (int id)
         {
             try
             {
                 using (ShopDBContext db = new ShopDBContext())
                 {
+                    List<Product> products = (from x in db.Products
+                                              where x.ID == id
+                                              select x).ToList();
+                    return products;
+                    //Product product = db.Products.Find(id);
+                    //return product;
+                }
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
+        public Product get_product_ef(int id)
+        {
+            try
+            {
+                using (ShopDBContext db = new ShopDBContext())
+                {
+
                     Product product = db.Products.Find(id);
                     return product;
                 }
@@ -106,7 +128,6 @@ namespace GemshopProject.Admin.Models
                 return null;
             }
         }
-
 
         public List<Product> get_all_products()
         {
@@ -127,7 +148,7 @@ namespace GemshopProject.Admin.Models
 
         }
 
-        public List <Product> get_product_by_type(int catID)
+        public List <Product> get_product_by_category(int catID)
         {
             using (ShopDBContext db = new ShopDBContext())
             {

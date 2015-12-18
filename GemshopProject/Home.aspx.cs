@@ -17,7 +17,7 @@ public partial class Home : System.Web.UI.Page
 
     [WebMethod]
     public static List<Product> fill_page()
-    {
+    {  // this class will fetch all the product data from class to home page
         ProductModel productmodel = new ProductModel();
         List<Product> products = new List<Product>();
         products = productmodel.get_all_products();

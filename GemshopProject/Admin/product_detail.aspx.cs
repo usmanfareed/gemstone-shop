@@ -90,7 +90,7 @@ namespace GemshopProject.Admin
             // get data from the given id
              
             ProductModel db = new ProductModel();
-            Product product = db.get_product(id);
+            Product product = db.get_product_ef(id);
 
             // fill text boxes with the new data
 

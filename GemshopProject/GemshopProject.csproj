@@ -635,7 +635,7 @@
     <Content Include="img\top.png" />
     <Content Include="img\update.png" />
     <Content Include="img\wishlist.png" />
-    <Content Include="index.html" />
+    <Content Include="web_pages\index.html" />
     <Content Include="js\checkbox.js" />
     <Content Include="js\html5.js" />
     <Content Include="js\jquery-1.8.3.min.js" />

@@ -4,8 +4,9 @@
 
 
     <script>
+        //this script will populate the products data from cs class to the home page
         $(document).ready(function () {
-
+            
             $.ajax({
                 url: "Home.aspx/fill_page",
                 data: "{}",
@@ -27,7 +28,6 @@
                         '<a href="#" class="bay" style="opacity: 1; transform: rotate(0deg)"><img src="img/bg_cart.png" alt="Buy" title=""></a></div><!-- .cart -->'
 )
                     $('#product_grid').append($newproduct);
-                    alert(d[i].ID);
                 }
             }
         });
