@@ -19,8 +19,11 @@
                 $("#heading").append('<h1 class="page_title">' + data[0].Name + '</h1>'),
                 $("#pro_image").append('<img src="' + data[0].Image + '" alt="Product 1" title="" style="width: 100%"></a>'),
                 $("#pro_price").append(' <div class="price">RS  ' + data[0].Price + '</div><!-- .price -->'),
-                $("#quantity").append(' <div class="availability" >Quantity: <span style="color:red">' + data[0].AvailableQuantity + '</span></div>')
-                $("#description").append('<p>'+ data[0].Description +'</p>')
+                $("#quantity").append(' <div class="availability" >Available Quantity: <span style="color:red">' + data[0].AvailableQuantity + '</span></div>'),
+                $("#description").append('<p>' + data[0].Description + '</p>');
+                $("#select_quantity").append('<option> Select Quantity </option>')
+                
+
 
 
             };
@@ -54,19 +57,13 @@
 			    
                             
                             <div class="parameter_selection">
-                                <select>
-                                    <option>Select a size</option>
-                                    <option>Select a size</option>
-                                </select>
-                                <select>
-                                    <option>Choose a material</option>
-                                    <option>Choose a material</option>
-                                </select>
+                                <input id="select_quantity" type="text" placeholder="Please Enter Quantity"/>
+                                <div class="clear"></div>
 			    </div><!-- .parameter_selection -->
 
 			    <div class="cart">
                                 <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span>Add to Compare</a>
+                                <a href="#" class="wishlist"><span></span>Add to Wishlist</a>
                             </div><!-- .cart -->
 
 			</div><!-- .entry_content -->

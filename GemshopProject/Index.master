@@ -1,10 +1,9 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Index.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MasterPage" Codebehind="Index.master.cs" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-
      <meta charset="utf-8">
 
     <title>Home</title>
@@ -30,35 +29,32 @@
     <script src="js/jquery.anythingslider.fx.js"></script>
 </head>
 <body>
+                   <form runat="server">
+
     <div>
         <div id="top">
         <div class="container_12">
-            <div class="grid_3">
-                <div class="lang">
-                    <ul>
-                        <li class="current"><a href="#">EN</a></li>
-                        <li><a href="#">FR</a></li>
-                        <li><a href="#">GM</a></li>
-                    </ul>
-                </div><!-- .lang -->
-
-                <div class="currency">
-                    <ul>
-                        <li class="current"><a href="#">$</a></li>
-                        <li><a href="#">&#8364;</a></li>
-                        <li><a href="#">&#163;</a></li>
-                    </ul>
-                </div><!-- .currency -->
-            </div><!-- .grid_3 -->
+           
 
             <div class="grid_9">
                 <nav>
                     <a class="menu-open" href="#">Menu</a>
                     <ul>
-                        <li class="current"><a href="#">My Account</a></li>
-                        <li><a href="#">My Wishlist</a></li>
-                        <li><a href="loginPage.aspx">Log In</a></li>
-                        <li><a href="registrationPage.aspx">Sign Up</a></li>
+                <%--        <li class="current"><a href="#">My Account</a></li>
+                        <li><a href="#">My Wishlist</a></li>--%>
+                        
+                        <div style="color:white">
+                      <asp:Literal ID="litwelcome" runat="server"></asp:Literal>
+
+                        <asp:HyperLink ID="login" NavigateUrl="~/loginPage.aspx" runat="server">Login  /</asp:HyperLink>
+                               
+                      <asp:HyperLink  NavigateUrl="~/registrationPage.aspx" ID="signup" runat="server">Sign Up</asp:HyperLink>
+                        <asp:Literal ID="litStatus" runat="server"></asp:Literal>
+
+                        <asp:LinkButton ID="logout" runat="server" OnClick="logout_Click">Log Out</asp:LinkButton>
+                       
+                     </div>
+                        
                     </ul>
                 </nav>
             </div><!-- .grid_9 -->
@@ -77,9 +73,7 @@
 
             <div class="grid_9">
                 <div class="top_header">
-                    <div class="welcome">
-                        Welcome visitor you can <a href="loginPage.aspx">login</a> or <a href="registrationPage.aspx">create an account</a>.
-                    </div><!-- .welcome -->
+                    
 
                     <ul id="cart_nav">
                         <li>
@@ -133,32 +127,10 @@
                         <li><a href="looseGemstones.aspx">LOOSE GEMSTONES</a></li>
                         <li><a href="roughGemstones.aspx">ROUGH GEMSTONES</a></li>
                         <li><a href="mineral_crystal.aspx">MINERAL AND CRYSTAL</a></li>
+                                      
                         <li class="parent">
-                            <a href="catalog_grid.html">Spray</a>
-                            <ul class="sub">
-                                <li><a href="catalog_grid.html">For home</a></li>
-                                <li><a href="catalog_grid.html">For Garden</a></li>
-                                <li><a href="catalog_grid.html">For Car</a></li>
-                                <li><a href="catalog_grid.html">Other spray</a></li>
-                            </ul>
-                        </li>                        
-                        <li class="parent">
-                            <a href="#">All pages</a>
-                            <ul class="sub">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="typography_page.html">Typography and basic styles</a></li>
-                                <li><a href="catalog_grid.html">Catalog (grid view)</a></li>
-                                <li><a href="catalog_list.html">Catalog (list type view)</a></li>
-                                <li><a href="product_page.html">Product view</a></li>
-                                <li><a href="shopping_cart.html">Shoping cart</a></li>
-                                <li><a href="checkout.html">Proceed to checkout</a></li>
-                                <li><a href="compare.html">Products comparison</a></li>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="contact_us.html">Contact us</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="blog.html">Blog posts</a></li>
-                                <li><a href="blog_post.html">Blog post view</a></li>
-                            </ul>
+                         <asp:HyperLink ID="dashboard" style="color:teal; background-color:gold;" NavigateUrl="~/Admin/index.aspx" runat="server">Admin Dashboard</asp:HyperLink>
+
                         </li>
                     </ul>
                 </nav><!-- .primary -->
@@ -168,7 +140,7 @@
     </header>
               
                 <%-- This is dynamic body and place holder of other pages --%>
-       
+
                      <asp:ContentPlaceHolder ID="IndexBody" runat="server"></asp:ContentPlaceHolder>
     
     <footer>
@@ -241,5 +213,7 @@
         </div><!-- .footer_info -->
     </footer>
     </div>
+</form>
+
 </body>
 </html>

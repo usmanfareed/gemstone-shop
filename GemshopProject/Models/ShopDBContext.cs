@@ -22,9 +22,7 @@ namespace GemshopProject.Models
 
         virtual public DbSet<Purchase> Purchases { get; set; }
 
-        virtual public DbSet<Users_groups> Users_groups { get; set; }
 
-        virtual public DbSet<Users_groups_permissions> Users_groups_permissions { get; set; }
 
       
 

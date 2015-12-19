@@ -2,7 +2,8 @@
 
 <asp:Content ID="loginPage" ContentPlaceHolderID="IndexBody" Runat="Server">
 
-    <script>
+
+  <%--  <script>
         $(document).ready(function () {
             $("#login_btn").on('click', function (e) {
                 e.preventDefault();
@@ -29,7 +30,7 @@
             });
         });
 
-    </script>
+    </script>--%>
 
               <div class="breadcrumbs">
         <div class="container_12">
@@ -59,22 +60,21 @@
 			<div class="registed">
 			    <h2>Registed Customers</h2>
 			    <p>If you have an account with us, please log in.</p>
+                <p>
+                    <asp:Literal ID="litStatus" runat="server"></asp:Literal>
+                </p>
 			    <div class="email">
-				<strong>Email Adress:</strong><sup>*</sup><br>
-				<input type="email" name="" id="email" value="">
+				<strong>User Name:</strong><sup>*</sup><br>
+                <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
 			    </div><!-- .email -->
 			    <div class="password">
 				<strong>Password:</strong><sup>*</sup><br>
-				<input type="text" name="" id="pass" value="">
+                <asp:TextBox ID="pass" runat="server" TextMode="Password"></asp:TextBox>
 			    </div><!-- .password -->
-			    <div class="remember">
-				<input class="niceCheck" type="checkbox" name="Remember_password">
-				<span class="rem">Remember password</span>
-			    </div><!-- .remember -->
+			   
 			    <div class="submit">										
-				<input type="submit" id="login_btn" value="Login">
-                                <a class="forgot" href="#">Forgot Your Password?</a>
-				<span>* Required Field</span>
+				<asp:Button ID="login_btn" runat="server" Text="Login" OnClick="login_btn_Click" />
+                                
                                 <div class="clear"></div>
 			    </div><!-- .submit -->
 			</div><!-- .registed -->
@@ -87,6 +87,8 @@
             <div class="clear"></div>
         </div><!-- .container_12 -->
     </section><!-- #main -->
+
+
 
 
 </asp:Content>

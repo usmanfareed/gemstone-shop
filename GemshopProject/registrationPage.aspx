@@ -3,44 +3,7 @@
 
 <asp:Content ID="registrationPage" ContentPlaceHolderID="IndexBody" Runat="Server">
 
-    <script>
-        $(document).ready(function () {
-            $("#createBtn").on('click', function (e) {
-                e.preventDefault();
-                var FullName = $("#FullName").val();
-                var UserName = $("#UserName").val();
-                var Password = $("#password").val();
-                var Email = $("#email").val();
-                var ContactNum = $("#ContactNum").val();
-                var Address = $("#Address").val();
-                var PostData = {
-                    UserName,
-                    Password,
-                    FullName,
-                    Email,
-                    ContactNum,
-                    Address
-                };
-                $.ajax({
-                    type: "POST",
-                    url: 'registrationPage.aspx/create_user',
-                    data: '{context:' + JSON.stringify(PostData) + ' }',
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "JSON",
-                    success: function(output)
-                    {
-                        
-                        alert(output)
-                       
-                    
-                    }
-                })
-
-            });
-        });
-
-    </script>
-
+    <%-- The Body Starts from here --%>
 
     <%-- The Body Starts from here --%>
 
@@ -49,6 +12,7 @@
         <div id="content" class="grid_12">
             <header>
                 <h1 class="page_title">Create an Account</h1>
+                <asp:Literal ID="litStatus" runat="server"></asp:Literal>
             </header>
 
             <article>
@@ -60,32 +24,37 @@
                         <p>If you have an account with us, please log in.</p>
                         <div class="FullName">
                             <strong>Full Name:</strong><sup>*</sup><br>
-                            <input type="text" name="" id="FullName" value="">
+                            <asp:TextBox type="text" name="" id="FullName" runat="server"></asp:TextBox>
                         </div>
                         <div class="UserName">
                             <strong>UserName:</strong><sup>*</sup><br>
-                            <input type="text" name="" id="UserName" value="">
+                            <asp:TextBox type="text" name="" id="UserName" runat="server" ></asp:TextBox>
                         </div>
+                        
                         <div class="password">
                             <strong>Password:</strong><sup>*</sup><br>
-                            <input type="text" name="" id="password" value="">
+                            <asp:TextBox  name="" id="password" runat="server" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div class="password">
+                            <strong>Confirm Password:</strong><sup>*</sup><br>
+                            <asp:TextBox  name="" id="pass_confirm" runat="server" TextMode="Password"></asp:TextBox>
                         </div>
                         <div class="email">
                             <strong>Email Adress:</strong><sup>*</sup><br>
-                            <input type="email" name="" id="email" value="">
+                            <asp:TextBox type="email" name="" id="email" runat="server"></asp:TextBox>
                         </div>
                         <div class="ContactNum">
                             <strong>Contact Number:</strong><sup>*</sup><br>
-                            <input type="text" name="" id="ContactNum" value="">
+                            <asp:TextBox type="text" name="" id="ContactNum" runat="server"></asp:TextBox>
                         </div>
                         <div class="Address">
                             <strong>Shipping Address:</strong><sup>*</sup><br>
-                            <input type="text" name="" id="Address" value="">
+                            <asp:TextBox type="text" name="" id="Address" runat="server"></asp:TextBox>
                         </div>
                         
                         
                         <div class="submit">
-                            <input id="createBtn" type="Submit" value="Register">
+                            <asp:Button ID="createBtn" runat="server" Text="Register" OnClick="createBtn_Click" />
                             <input type="reset" class="button_class" value="Clear">
 
                             <span>* Required Field</span>
@@ -100,7 +69,6 @@
         <div class="clear"></div>
     </div><!-- .container_12 -->
 </section><!-- #main -->
-
 
 
 

@@ -2,7 +2,6 @@
 
 <asp:Content ID="Home" ContentPlaceHolderID="IndexBody" Runat="Server">
 
-
     <script>
         //this script will populate the products data from cs class to the home page
         $(document).ready(function () {
