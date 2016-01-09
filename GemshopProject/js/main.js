@@ -3,24 +3,6 @@ $(document).ready(function() {
     $('select').selectBox();
        
     // Cart
-    $(function() {
-	$('#cart_nav').hover(
-            function(){
-                var self = this;
-                this.hoverAnimationTimeout = setTimeout(function () {
-                    $(self).find('.cart_li').transition({ background: '#eb6445', color: '#fff', paddingRight: '10px'});
-                    $(self).find('.cart_cont').fadeIn();
-                    $(self).find('.view_cart').transition({ left: '0' });
-                    $(self).find('.checkout').transition({ left: '0', delay: 200 });
-                }, 200);
-	    }, function(){
-                clearTimeout(this.hoverAnimationTimeout);
-                $(this).find('.cart_li').transition({ background: 'none', color: '#444', paddingRight: '0' });
-                $(this).find('.cart_cont').fadeOut();
-                $(this).find('.view_cart').transition({ left: '315px', delay: 400 });
-                $(this).find('.checkout').transition({ left: '147px', delay: 400 });
-	});
-    });
     
     //Top menu
     $(function(){

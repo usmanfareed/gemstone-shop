@@ -67,7 +67,6 @@
             <div class="grid_3">
                 <hgroup>
                     <h1 id="site_logo"><a href="Home.aspx" title=""><img src="img/logo.png" alt="Online Store Theme Logo"></a></h1>
-                    <h2 id="site_description">Online Store Theme</h2>
                 </hgroup>
             </div><!-- .grid_3 -->
 
@@ -77,10 +76,9 @@
 
                     <ul id="cart_nav">
                         <li>
-                            <a class="cart_li" href="#">
+                            <a class="cart_li" href="cart.aspx">
                                 <div class="cart_ico"></div>
                                 Cart
-                                <span>$0.00</span>
                             </a>
                             <ul class="cart_cont">
                                 <li class="no_border recently">Recently added item(s)</li>
@@ -104,8 +102,8 @@
                                     <div class="clear"></div>
                                 </li>
                                 <li class="no_border">
-                                    <a href="shopping_cart.html" class="view_cart">View shopping cart</a>
-                                    <a href="checkout.html" class="checkout">Procced to Checkout</a>
+                                    <a href="cart.aspx" class="view_cart">View shopping cart</a>
+                                    <a href="checkout.aspx" class="checkout">Procced to Checkout</a>
                                 </li>
                             </ul>
                         </li>
@@ -124,9 +122,9 @@
                     <a class="menu-select" href="#">Catalog</a>
                     <ul>
                         <li><a href="Home.aspx">Home</a></li>
-                        <li><a href="looseGemstones.aspx">LOOSE GEMSTONES</a></li>
-                        <li><a href="roughGemstones.aspx">ROUGH GEMSTONES</a></li>
-                        <li><a href="mineral_crystal.aspx">MINERAL AND CRYSTAL</a></li>
+                        <li><a href="looseGemstones.aspx">GEMSTONES</a></li>
+                        <li><a href="roughGemstones.aspx">ABOUT US</a></li>
+                        <li><a href="mineral_crystal.aspx">CONTACT US</a></li>
                                       
                         <li class="parent">
                          <asp:HyperLink ID="dashboard" style="color:teal; background-color:gold;" NavigateUrl="~/Admin/index.aspx" runat="server">Admin Dashboard</asp:HyperLink>

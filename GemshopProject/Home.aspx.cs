@@ -21,10 +21,16 @@ public partial class Home : System.Web.UI.Page
         ProductModel productmodel = new ProductModel();
         List<Product> products = new List<Product>();
         products = productmodel.get_all_products();
+
+ 
+
         return products;
+        
     }
 
-}
+    
+
+    }
 
 
 

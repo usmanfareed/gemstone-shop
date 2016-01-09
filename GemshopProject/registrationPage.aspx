@@ -3,7 +3,6 @@
 
 <asp:Content ID="registrationPage" ContentPlaceHolderID="IndexBody" Runat="Server">
 
-    <%-- The Body Starts from here --%>
 
     <%-- The Body Starts from here --%>
 
@@ -12,7 +11,6 @@
         <div id="content" class="grid_12">
             <header>
                 <h1 class="page_title">Create an Account</h1>
-                <asp:Literal ID="litStatus" runat="server"></asp:Literal>
             </header>
 
             <article>
@@ -20,7 +18,9 @@
 
                 <div class="grid_6 registed_form customDivSize">
                     <div class="registed">
-                        <h2>Registed Customers</h2>
+                        <h2>Registered Customers</h2>
+                                        <asp:Literal ID="litStatus" runat="server"></asp:Literal>
+
                         <p>If you have an account with us, please log in.</p>
                         <div class="FullName">
                             <strong>Full Name:</strong><sup>*</sup><br>

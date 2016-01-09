@@ -6,7 +6,7 @@
     <form id="form2" runat="server">
 
 
-    <script>
+   <%-- <script>
 
         $(document).ready(function(){
             window.onbeforeunload = function () { }
@@ -47,7 +47,7 @@
 
 
 
-    </script>
+    </script>--%>
 
 
     <%-- <script>

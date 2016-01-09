@@ -82,5 +82,57 @@ namespace GemshopProject.Admin.Models
             }
 
         }
+
+        public List<Purchase> get_ordersinCart (string userID)
+        {
+            ShopDBContext db = new ShopDBContext();
+            List<Purchase> orders = (from x in db.Purchases
+                                     where x.UsersID == userID
+                                     && x.IsInCart
+                                     orderby x.DateTime
+                                     select x).ToList();
+            return orders;
+        }
+        public int get_amountofOrders(string userID)
+        {
+            try
+            {
+                ShopDBContext db = new ShopDBContext();
+                int totalprice = (from x in db.Purchases
+                                  where x.UsersID == userID
+                                  && x.IsInCart
+                                  select x.TotalPrice).Sum();
+                return totalprice;
+            }
+            catch  
+            {
+
+                return 0;
+            }
+        }
+        public void update_quantity(int id, int quantity)
+        {
+            ShopDBContext db = new ShopDBContext();
+            Purchase purchase = db.Purchases.Find(id);
+            purchase.Quantity = quantity;
+
+            db.SaveChanges();
+
+        }
+
+        public void mark_paid(List<Purchase> purchases)
+        {
+            ShopDBContext db = new ShopDBContext();
+            if (purchases != null)
+            {
+                foreach(Purchase purchase in purchases)
+                {
+                    Purchase oldpurchase = db.Purchases.Find(purchase.ID);
+                    oldpurchase.DateTime = DateTime.Now.ToString();
+                    oldpurchase.IsInCart = false;
+                }
+                db.SaveChanges();
+            }
+        }
     }
 }

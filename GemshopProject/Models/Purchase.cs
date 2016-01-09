@@ -12,12 +12,14 @@ namespace GemshopProject.Models
     public class Purchase
     {
         public int ID { get; set; }
+        public string UsersID { get; set; }
+        public int ProductID { get; set; }
         public int Quantity { get; set; }
         public int TotalPrice { get; set; }
         public string DateTime { get; set; }
+        public bool IsInCart { get; set; }
 
-
-         public Users Users { get; set; }
-         public Product Products { get; set; }
+        public Users Users { get; set; }
+        public Product Products { get; set; }
     }
 }

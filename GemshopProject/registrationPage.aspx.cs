@@ -44,12 +44,15 @@ public partial class registrationPage : System.Web.UI.Page
             ConnectionStrings["ShopDBContext"].ConnectionString;
 
         UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userstore);
-       
+
         //creating new user and storing in database
         IdentityUser user = new IdentityUser();
         user.UserName = UserName.Text;
+        if (!string.IsNullOrWhiteSpace(FullName.Text) && !string.IsNullOrWhiteSpace(email.Text) && !string.IsNullOrWhiteSpace(ContactNum.Text) && !string.IsNullOrWhiteSpace(Address.Text))
+        {
+            
 
-        if(password.Text == pass_confirm.Text)
+        if (password.Text == pass_confirm.Text)
         {
             try
             {
@@ -57,7 +60,7 @@ public partial class registrationPage : System.Web.UI.Page
                 //database will be created
 
                 IdentityResult result = manager.Create(user, password.Text);
-                if(result.Succeeded)
+                if (result.Succeeded)
                 {
                     Users info = new Users
                     {
@@ -85,19 +88,26 @@ public partial class registrationPage : System.Web.UI.Page
                 }
                 else
                 {
-                    litStatus.Text = result.Errors.FirstOrDefault();
+                    litStatus.Text =String.Format( "<font style='color : red;'> {0} </font>" , result.Errors.FirstOrDefault());
                 }
+
 
             }
             catch (Exception ex)
             {
-                
+
                 litStatus.Text = ex.ToString();
             }
         }
+   
         else
         {
-            litStatus.Text = "Passwords does not match";
+            litStatus.Text = "<font style='color : red;'>Passwords does not match</font>";
+        }
+         }
+        else
+        {
+            litStatus.Text = "<font style='color : red;'>Please fill all the required fields </font>";
         }
     }
 

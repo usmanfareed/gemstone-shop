@@ -78,6 +78,25 @@ namespace GemshopProject.Admin.Models
 
         }
 
+        public List<Category> get_all_categories()
+        {
+            try
+            {
+                using (ShopDBContext db = new ShopDBContext())
+                {
+                    List<Category> categories = (from x in db.Categories
+                                              select x).ToList();
+                    return categories;
+                }
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
+        }
+
 
     }
 }

@@ -64,7 +64,7 @@ public partial class loginPage : System.Web.UI.Page
         }
         else
         {
-            litStatus.Text = "Invalid Username or Password";
+            litStatus.Text = "<font style='color : red;'>Invalid Username or Password</font>";
         }
     }
 }
