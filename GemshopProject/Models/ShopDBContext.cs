@@ -21,10 +21,12 @@ namespace GemshopProject.Models
         virtual public DbSet<Category> Categories { get; set; }
 
         virtual public DbSet<Purchase> Purchases { get; set; }
+        virtual public DbSet<orders> Orders { get; set; }
+        virtual public DbSet<ordered_items> Orderd_items { get; set; }
 
 
 
-      
+
 
     }
 

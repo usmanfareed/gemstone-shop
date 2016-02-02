@@ -7,13 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace GemshopProject.Admin
 {
-    public partial class master_dashboard : System.Web.UI.MasterPage
+    public partial class orderd_items : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            litStatus.Text = Context.User.Identity.Name + "    ";
-            litwelcome.Text = "WELCOME  ";
 
         }
     }

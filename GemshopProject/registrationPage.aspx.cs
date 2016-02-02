@@ -66,7 +66,7 @@ public partial class registrationPage : System.Web.UI.Page
                     {
                         FullName = FullName.Text,
                         Email = email.Text,
-                        Contact = Convert.ToInt32(ContactNum.Text),
+                        Contact = Convert.ToInt64(ContactNum.Text),
                         Address = Address.Text,
                         AuthID = user.Id,
                         reg_Date = Convert.ToString(DateTime.Today)

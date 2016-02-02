@@ -10,33 +10,33 @@
 namespace GemshopProject.Admin {
     
     
-    public partial class master_dashboard {
+    public partial class orderd_items {
         
         /// <summary>
-        /// litwelcome control.
+        /// form4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litwelcome;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form4;
         
         /// <summary>
-        /// litStatus control.
+        /// odered_items_Grid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litStatus;
+        protected global::System.Web.UI.WebControls.GridView odered_items_Grid;
         
         /// <summary>
-        /// IndexBody control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder IndexBody;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

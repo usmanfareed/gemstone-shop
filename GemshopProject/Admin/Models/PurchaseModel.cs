@@ -42,7 +42,6 @@ namespace GemshopProject.Admin.Models
                 p.Users.ID = purchase.Users.ID;
                 p.Products.ID = purchase.Products.ID;
                 p.Quantity = purchase.Quantity;
-                p.TotalPrice = purchase.TotalPrice;
 
                 
 
@@ -93,23 +92,23 @@ namespace GemshopProject.Admin.Models
                                      select x).ToList();
             return orders;
         }
-        public int get_amountofOrders(string userID)
-        {
-            try
-            {
-                ShopDBContext db = new ShopDBContext();
-                int totalprice = (from x in db.Purchases
-                                  where x.UsersID == userID
-                                  && x.IsInCart
-                                  select x.TotalPrice).Sum();
-                return totalprice;
-            }
-            catch  
-            {
+        //public int get_amountofOrders(string userID)
+        //{
+        //    try
+        //    {
+        //        ShopDBContext db = new ShopDBContext();
+        //        int totalprice = (from x in db.Purchases
+        //                          where x.UsersID == userID
+        //                          && x.IsInCart
+        //                          select x.TotalPrice).Sum();
+        //        return totalprice;
+        //    }
+        //    catch  
+        //    {
 
-                return 0;
-            }
-        }
+        //        return 0;
+        //    }
+        //}
         public void update_quantity(int id, int quantity)
         {
             ShopDBContext db = new ShopDBContext();

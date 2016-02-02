@@ -144,9 +144,17 @@
       <DependentUpon>master_dashboard.Master</DependentUpon>
     </Compile>
     <Compile Include="Admin\Models\CategoryModel.cs" />
+    <Compile Include="Admin\Models\OrderModel.cs" />
     <Compile Include="Admin\Models\ProductModel.cs" />
     <Compile Include="Admin\Models\PurchaseModel.cs" />
     <Compile Include="Admin\Models\UserinfoModel.cs" />
+    <Compile Include="Admin\orderd_items.aspx.cs">
+      <DependentUpon>orderd_items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\orderd_items.aspx.designer.cs">
+      <DependentUpon>orderd_items.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\product_detail.aspx.cs">
       <DependentUpon>product_detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -160,6 +168,13 @@
     </Compile>
     <Compile Include="Admin\product_order.aspx.designer.cs">
       <DependentUpon>product_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\user_managment.aspx.cs">
+      <DependentUpon>user_managment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\user_managment.aspx.designer.cs">
+      <DependentUpon>user_managment.aspx</DependentUpon>
     </Compile>
     <Compile Include="cart.aspx.cs">
       <DependentUpon>cart.aspx</DependentUpon>
@@ -188,6 +203,8 @@
     <Compile Include="Models\Account_db.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\GemstoreDBInitializer.cs" />
+    <Compile Include="Models\ordered_items.cs" />
+    <Compile Include="Models\orders.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Purchase.cs" />
     <Content Include="Admin\all_pages\apps-calendar.html" />
@@ -553,8 +570,10 @@
     <Content Include="Admin\index.aspx" />
     <Content Include="Admin\all_pages\index.html" />
     <Content Include="Admin\manage_category.aspx" />
+    <Content Include="Admin\orderd_items.aspx" />
     <Content Include="Admin\product_detail.aspx" />
     <Content Include="Admin\product_order.aspx" />
+    <Content Include="Admin\user_managment.aspx" />
     <Content Include="cart.aspx" />
     <Content Include="checkout.aspx" />
     <Content Include="Index.master" />

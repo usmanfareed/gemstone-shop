@@ -15,7 +15,7 @@ public class Users
     public string FullName { get; set; }
     public string Email { get; set; }
 
-    public int Contact { get; set; }
+    public long Contact { get; set; }
 
     public string Address { get; set; }
     public string reg_Date { get; set; }

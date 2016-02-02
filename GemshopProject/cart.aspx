@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.master" AutoEventWireup="true" CodeBehind="cart.aspx.cs" Inherits="GemshopProject.cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="IndexBody" runat="server">
+    
     <script>
-
+        var totalprice = 150;
 
         //this script will populate the products data from cs class to the home page
         $(document).ready(function () {
@@ -16,7 +17,6 @@
             });
             function OnSuccess(data) {
                 d = data.d;
-                var totalprice = 0;
                 var item = "";
                 for (i = 0; i < d.length; i++) {
                     var subtotal = (d[i].price) * (d[i].quantity);
@@ -34,15 +34,22 @@
                           $('#cart_items').append($items);
                        
                 }
+                
                 var total = totalprice.toString();
                 var total_price = document.getElementById("total_price");
                 total_price.innerHTML = total;
-               
+                
                 
                 
             }
         });
 
+        $(document).ready(function () {
+            $("#proceed").click(function (e) {
+                e.preventDefault();
+                location.href = 'checkout.aspx?total_price=' + totalprice;
+            })
+        });
     </script>
 
 
@@ -57,6 +64,13 @@
 
 
         }
+
+    </script>
+
+    <script>
+        
+            
+
 
     </script>
 <%--    <script>
@@ -117,8 +131,8 @@
                                         <td>Grand Total</td><td id="total_price" class="price">$1, 500.00</td>
                                     </tr>
                                 </table>
-                                <button onclick="location.href = 'checkout.aspx';" class="checkout">PROCEED TO CHECKOUT <img src="img/checkout.png" alt="" title=""></button>
-                            </div><!-- .total -->
+                                <button id="proceed" class="checkout">PROCEED TO CHECKOUT <img src="img/checkout.png" alt="" title=""></button>
+                                Shipping charges 150/- are also included </div><!-- .total -->
                         </div><!-- .grid_4 -->
 
                         <div class="clear"></div>

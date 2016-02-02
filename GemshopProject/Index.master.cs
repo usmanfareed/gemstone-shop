@@ -32,7 +32,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
         }
 
-        if(Context.User.Identity.Name == "Admin")
+        if(Context.User.Identity.Name == "admin")
         {
             dashboard.Visible = true;
         }
