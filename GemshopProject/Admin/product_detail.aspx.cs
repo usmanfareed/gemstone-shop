@@ -67,20 +67,34 @@ namespace GemshopProject.Admin
             {
                 // if id exists update current row
                 DateTime date_added = DateTime.Now;
+                if (p != null)
+                { int id = Convert.ToInt32(Request.QueryString["id"]);
+                    p.DateUpdated = Convert.ToString(date_added);
 
-                int id = Convert.ToInt32(Request.QueryString["id"]);
-                p.DateUpdated = Convert.ToString(date_added);
-               
-                p.Image = path;
-                db.update_product(id, p);
+                    p.Image = path;
+                    db.update_product(id, p);
+                }
+                else
+                {
+                    litStatus.Text = String.Format("<font style='color : red;'> Please Complete All the Fields </font>");
+                }
             }
             //if id donsnt exit create new row
             else
             {
+                if ((p != null))
+                {
 
-
-                p.Image = path;
+                    p.Image = path;
                 db.insert_product(p);
+
+
+                    Response.Redirect("all_product.aspx");
+                }
+                else
+                {
+                    litStatus.Text = String.Format("<font style='color : red;'> Please Complete All the Fields </font>");
+                }
             }
         }
 
@@ -106,15 +120,26 @@ namespace GemshopProject.Admin
 
         private Product create_product()
         {
-            DateTime date_added = DateTime.Now;
-            var product = new Product();
-            product.Name = product_name.Text;
-            product.Price = Convert.ToInt32(product_price.Text);
-            product.CategoryID = Convert.ToInt32(droplist.Text);
-            product.AvailableQuantity = Convert.ToInt32(product_quantity.Text);
-            product.DateAdded = Convert.ToString(date_added);
-            product.Description = product_description.Text;
-            return product;
+            if (!string.IsNullOrWhiteSpace(product_name.Text) && !string.IsNullOrWhiteSpace(product_price.Text) && !string.IsNullOrWhiteSpace(product_quantity.Text))
+            {
+                DateTime date_added = DateTime.Now;
+                var product = new Product();
+                product.Name = product_name.Text;
+                product.Price = Convert.ToInt32(product_price.Text);
+                product.CategoryID = Convert.ToInt32(droplist.Text);
+                product.AvailableQuantity = Convert.ToInt32(product_quantity.Text);
+                product.DateAdded = Convert.ToString(date_added);
+                product.Description = product_description.Text;
+                return product;
+            }
+
+            else
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Please Fill All the Remaining Fields </font>");
+                return null ;
+            }
+
+
         }
 
 
@@ -126,11 +151,7 @@ namespace GemshopProject.Admin
 
 
 
-
-
-        
-
-    }
+}
 }
 
 

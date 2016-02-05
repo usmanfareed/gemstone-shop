@@ -87,7 +87,6 @@ namespace GemshopProject.Admin.Models
             ShopDBContext db = new ShopDBContext();
             List<Purchase> orders = (from x in db.Purchases
                                      where x.UsersID == userID
-                                     && x.IsInCart
                                      orderby x.DateTime
                                      select x).ToList();
             return orders;
@@ -128,7 +127,6 @@ namespace GemshopProject.Admin.Models
                 {
                     Purchase oldpurchase = db.Purchases.Find(purchase.ID);
                     oldpurchase.DateTime = DateTime.Now.ToString();
-                    oldpurchase.IsInCart = false;
                 }
                 db.SaveChanges();
             }

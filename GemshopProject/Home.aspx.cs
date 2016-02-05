@@ -7,12 +7,34 @@ using System.Web.UI.WebControls;
 using GemshopProject.Models;
 using GemshopProject.Admin.Models;
 using System.Web.Services;
+using System.Data;
 
 public partial class Home : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        SliderModel slidermodel = new SliderModel();
+        List<slider> banners = new List<slider>();
+        banners = slidermodel.get_all_banners();
 
+        DataTable newsDataTable = new DataTable();
+
+        // add some columns to our datatable
+        newsDataTable.Columns.Add("href_li");
+        newsDataTable.Columns.Add("img_li");
+        foreach(slider banner in banners)
+        {
+            DataRow newsDataRow = newsDataTable.NewRow();
+            newsDataRow["href_li"] = "product_detail.aspx?id="+banner.ProductID;
+            newsDataRow["img_li"] = banner.image_path;
+            newsDataTable.Rows.Add(newsDataRow);
+
+            repeat.DataSource = newsDataTable;
+            repeat.DataBind();
+        }
+        
+
+        //slider.InnerHtml = "<li id='slide'> < div class='slid_content'> <a class='buy_now' href='#'>Buy now</a> </div><img src = '/images/slid-2.png' alt= 'Slid 2' title= '' > </ li > "+ slider.InnerText; 
     }
 
     [WebMethod]
@@ -28,9 +50,21 @@ public partial class Home : System.Web.UI.Page
         
     }
 
-    
+    //[WebMethod]
+    //public static List<slider> fill_slider()
+    //{  // this class will fetch all the product data from class to home page
+    //    SliderModel slidermodel = new SliderModel();
+    //    List<slider> products = new List<slider>();
+    //    products = slidermodel.get_all_banners();
 
-    }
+
+
+    //    return products;
+
+    //}
+
+
+}
 
 
 

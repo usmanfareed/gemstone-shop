@@ -26,12 +26,17 @@ namespace GemshopProject
             if (!string.IsNullOrWhiteSpace(Request.QueryString["id"]))
             {
                 int id = Convert.ToInt32(Request.QueryString["id"]);
-                Purchase cart = new Purchase
+                    int value = 1;
+                    if(!string.IsNullOrWhiteSpace(Request.QueryString["quan"]))
+                        {
+                        value = Convert.ToInt32(Request.QueryString["quan"]);
+                    }
+                
+                    Purchase cart = new Purchase
                 {
-                    Quantity = 1,
+                    Quantity = value,
                     UsersID = Userid,
                     DateTime = Convert.ToString(DateTime.Now),
-                    IsInCart = true,
                     ProductID = id
                 };
                 model.insert_purchase(cart);

@@ -147,7 +147,9 @@
     <Compile Include="Admin\Models\OrderModel.cs" />
     <Compile Include="Admin\Models\ProductModel.cs" />
     <Compile Include="Admin\Models\PurchaseModel.cs" />
+    <Compile Include="Admin\Models\SliderModel.cs" />
     <Compile Include="Admin\Models\UserinfoModel.cs" />
+    <Compile Include="Admin\Models\WishlistModel.cs" />
     <Compile Include="Admin\orderd_items.aspx.cs">
       <DependentUpon>orderd_items.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -168,6 +170,13 @@
     </Compile>
     <Compile Include="Admin\product_order.aspx.designer.cs">
       <DependentUpon>product_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\slider_managment.aspx.cs">
+      <DependentUpon>slider_managment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\slider_managment.aspx.designer.cs">
+      <DependentUpon>slider_managment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\user_managment.aspx.cs">
       <DependentUpon>user_managment.aspx</DependentUpon>
@@ -190,6 +199,13 @@
     <Compile Include="checkout.aspx.designer.cs">
       <DependentUpon>checkout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="contactus.aspx.cs">
+      <DependentUpon>contactus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contactus.aspx.designer.cs">
+      <DependentUpon>contactus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
@@ -199,6 +215,13 @@
     <Compile Include="loginPage.aspx.designer.cs">
       <DependentUpon>loginPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="looseGemstones.aspx.cs">
+      <DependentUpon>looseGemstones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="looseGemstones.aspx.designer.cs">
+      <DependentUpon>looseGemstones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_db.cs" />
     <Compile Include="Models\Category.cs" />
@@ -207,6 +230,28 @@
     <Compile Include="Models\orders.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Purchase.cs" />
+    <Compile Include="Models\slider.cs" />
+    <Compile Include="order_status.aspx.cs">
+      <DependentUpon>order_status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order_status.aspx.designer.cs">
+      <DependentUpon>order_status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order_success.aspx.cs">
+      <DependentUpon>order_success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order_success.aspx.designer.cs">
+      <DependentUpon>order_success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wishlist.aspx.cs">
+      <DependentUpon>wishlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wishlist.aspx.designer.cs">
+      <DependentUpon>wishlist.aspx</DependentUpon>
+    </Compile>
     <Content Include="Admin\all_pages\apps-calendar.html" />
     <Content Include="Admin\all_pages\apps-contact.html" />
     <Content Include="Admin\all_pages\apps-email-compose.html" />
@@ -573,10 +618,15 @@
     <Content Include="Admin\orderd_items.aspx" />
     <Content Include="Admin\product_detail.aspx" />
     <Content Include="Admin\product_order.aspx" />
+    <Content Include="Admin\slider_managment.aspx" />
     <Content Include="Admin\user_managment.aspx" />
     <Content Include="cart.aspx" />
     <Content Include="checkout.aspx" />
+    <Content Include="contactus.aspx" />
     <Content Include="Index.master" />
+    <Content Include="looseGemstones.aspx" />
+    <Content Include="order_status.aspx" />
+    <Content Include="order_success.aspx" />
     <Content Include="product_detail.aspx" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
@@ -618,6 +668,7 @@
     <Content Include="Admin\assets\plugins\footable\css\fonts\footable.ttf" />
     <Content Include="Admin\assets\plugins\footable\css\fonts\footable.woff" />
     <Content Include="Admin\assets\plugins\footable\css\fonts\footabled41d.eot" />
+    <Content Include="wishlist.aspx" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -730,11 +781,9 @@
     <Content Include="js\selectBox.js" />
     <Content Include="web_pages\login.html" />
     <Content Include="loginPage.aspx" />
-    <Content Include="looseGemstones.aspx" />
-    <Content Include="mineral_crystal.aspx" />
+    <Content Include="aboutus.aspx" />
     <Content Include="web_pages\product_page.html" />
     <Content Include="registrationPage.aspx" />
-    <Content Include="roughGemstones.aspx" />
     <Content Include="web_pages\shopping_cart.html" />
     <Content Include="web_pages\typography_page.html" />
   </ItemGroup>
@@ -756,14 +805,11 @@
       <DependentUpon>loginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="looseGemstones.aspx.cs">
-      <DependentUpon>looseGemstones.aspx</DependentUpon>
+    <Compile Include="aboutus.aspx.cs">
+      <DependentUpon>aboutus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="mineral_crystal.aspx.cs">
-      <DependentUpon>mineral_crystal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Compile Include="Models\Wishlist.cs" />
     <Compile Include="OwinStartup.cs" />
     <Compile Include="product_detail.aspx.cs">
       <DependentUpon>product_detail.aspx</DependentUpon>
@@ -779,10 +825,6 @@
     </Compile>
     <Compile Include="registrationPage.aspx.designer.cs">
       <DependentUpon>registrationPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="roughGemstones.aspx.cs">
-      <DependentUpon>roughGemstones.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

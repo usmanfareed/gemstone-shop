@@ -61,7 +61,7 @@ namespace GemshopProject.Admin.Models
 
                 return "Error" + e;
             }
-             
+
         }
 
         public string delete_product(int id)
@@ -90,7 +90,7 @@ namespace GemshopProject.Admin.Models
         }
 
 
-        public List<Product> get_product (int id)
+        public List<Product> get_product(int id)
         {
             try
             {
@@ -133,13 +133,13 @@ namespace GemshopProject.Admin.Models
         {
             try
             {
-                  using (ShopDBContext db = new ShopDBContext())
-                  {
+                using (ShopDBContext db = new ShopDBContext())
+                {
                     List<Product> products = (from x in db.Products
                                               select x).ToList();
                     return products;
-                  }
                 }
+            }
             catch (Exception)
             {
 
@@ -148,7 +148,7 @@ namespace GemshopProject.Admin.Models
 
         }
 
-        public List <Product> get_product_by_category(int catID)
+        public List<Product> get_product_by_category(int catID)
         {
             using (ShopDBContext db = new ShopDBContext())
             {
@@ -158,8 +158,31 @@ namespace GemshopProject.Admin.Models
                 return products;
             }
         }
-    }
 
+
+        public List<Product> search_products(string search)
+        {
+            try
+            {
+                using (ShopDBContext db = new ShopDBContext())
+                {
+                    List<Product> products = (from x in db.Products
+                                              where x.Name.Contains(search)
+                                              select x).ToList();
+                    return products;
+                    //Product product = db.Products.Find(id);
+                    //return product;
+                }
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
+        }
+
+    }
 }
 
 

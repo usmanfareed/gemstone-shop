@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-/// <summary>
-/// Summary description for categories
-/// </summary>
-/// 
 namespace GemshopProject.Models
 {
-    public class Category
+    public class slider
     {
         [Key]
         public int ID { get; set; }
-
         [Required]
         public string Name { get; set; }
+        [Required]
 
-        public string Description { get; set; }
-        public List<Product> Products { get; set; }
+        public string image_path { get; set; }
+        [Required]
+
+        public int ProductID { get; set; }
+        public Product Products { get; set; }
+
     }
 }

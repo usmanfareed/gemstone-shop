@@ -40,6 +40,7 @@
 }
 .container_12 .grid_3 {
     width: 228px;
+   
 }
 .container_12 .grid_4 {
     width: 312px;
@@ -1021,6 +1022,7 @@ hgroup {
     position: relative;
 }
 #cart_nav a.cart_li {
+    border-radius: 19px;
     color: #444;
     display: block;
     float: right;
@@ -1029,7 +1031,7 @@ hgroup {
     margin: 0;
     min-width: 105px;
     padding: 0;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -1051,10 +1053,9 @@ hgroup {
     -moz-border-radius: 19px;
     -khtml-border-radius: 19px;
     behavior: url(PIE.html);
-    color: #fff;
     padding: 0 0px 0 0px;
     position: relative;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     z-index: 12;
 }
@@ -2267,7 +2268,7 @@ img.sale {
     display: block;
     float: right;
     height: 27px;
-    margin: 10px 0 0 0;
+    margin: 10px;
     opacity: 0;
     filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
     padding: 11px 0 0 0;
@@ -4826,4 +4827,5 @@ ul.f_contact li+li+li {
         float: left;
         margin: 0 0 0 15px;
     }
+    
 }

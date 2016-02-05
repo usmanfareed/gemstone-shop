@@ -23,6 +23,8 @@ namespace GemshopProject.Models
         virtual public DbSet<Purchase> Purchases { get; set; }
         virtual public DbSet<orders> Orders { get; set; }
         virtual public DbSet<ordered_items> Orderd_items { get; set; }
+        virtual public DbSet<Wishlist> Wishlist { get; set; }
+        virtual public DbSet<slider> Slider { get; set; }
 
 
 

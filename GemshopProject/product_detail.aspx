@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.master" AutoEventWireup="true" CodeBehind="product_detail.aspx.cs" Inherits="GemshopProject.product_detail" %>
 <asp:Content ID="product_detail" ContentPlaceHolderID="IndexBody" runat="server">
 
-
     <script>
         //this script will populate the products data from cs class to the home page
         $(document).ready(function () {
-
+            var id;
+            var max_quantity;
             $.ajax({
                 url: "product_detail.aspx/get_product",
                 data: "{}",
@@ -22,13 +22,43 @@
                 $("#quantity").append(' <div class="availability" >Available Quantity: <span style="color:red">' + data[0].AvailableQuantity + '</span></div>'),
                 $("#description").append('<p>' + data[0].Description + '</p>');
                 $("#select_quantity").append('<option> Select Quantity </option>')
+                //$("#cart").append('<a href="cart.aspx?id=' + data[0].ID + '"  class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>')
+                $("#cart").append('<a href="wishlist.aspx?id=' + data[0].ID + '"  class="wishlist"><span></span>Add to Wishlist</a>')
+                id = data[0].ID;
+                max_quantity = data[0].AvailableQuantity;
                 
 
-
-
             };
-        });
+
+
+
+            
+           
+
+            $("#addtocart").click(function (e) {
+
+                e.preventDefault();
+              
+                var value = $("#select_quantity").val();
+                if(value == null)
+                {
+                    value=1;
+                }
+                if(value <= max_quantity)
+                {
+                location.href = 'cart.aspx?id=' + id + '&quan=' + value;
+                }
+                else
+                {
+                    alert("Selected quantity is more than Available Quantity")
+                }
+            });
+            });
+      
             </script>
+
+
+
 
         <section id="main">
         <div class="container_12">
@@ -61,9 +91,8 @@
                                 <div class="clear"></div>
 			    </div><!-- .parameter_selection -->
 
-			    <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span>Add to Wishlist</a>
+			    <div id="cart" class="cart">
+                                <a href="" id="addtocart" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
                             </div><!-- .cart -->
 
 			</div><!-- .entry_content -->

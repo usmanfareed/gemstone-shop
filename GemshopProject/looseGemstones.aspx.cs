@@ -22,6 +22,11 @@ public partial class looseGemstones : System.Web.UI.Page
             int cat_id = 0;
             Session["cat_id"] = cat_id;
         }
+        if (!string.IsNullOrWhiteSpace(Request.QueryString["search"]))
+        {
+            string search = Request.QueryString["search"];
+            Session["search"] = search;
+        }
     }
     [WebMethod]
     public static List<Category> fill_page()
@@ -29,24 +34,36 @@ public partial class looseGemstones : System.Web.UI.Page
 
 
         CategoryModel categorymodel = new CategoryModel();
-            List<Category> categories = new List<Category>();
-            categories = categorymodel.get_all_categories();
+        List<Category> categories = new List<Category>();
+        categories = categorymodel.get_all_categories();
 
-            return categories;
-        
- 
+        return categories;
+
+
     }
 
     [WebMethod]
     public static List<Product> get_products()
     {  // this class will fetch all the product data from class to home page
 
+        string search = Convert.ToString(HttpContext.Current.Session["search"]);
         int cat_id = Convert.ToInt32(HttpContext.Current.Session["cat_id"]);
-        if (cat_id == 0 )
+        if (cat_id == 0 && search == null)
         {
             ProductModel productmodel = new ProductModel();
             List<Product> products = new List<Product>();
             products = productmodel.get_all_products();
+
+            return products;
+        }
+
+
+        if (search != null)
+           {
+
+            ProductModel productmodel = new ProductModel();
+            List<Product> products = new List<Product>();
+            products = productmodel.search_products(search);
 
             return products;
         }

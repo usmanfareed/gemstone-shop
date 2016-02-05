@@ -30,7 +30,7 @@
                 <footer class="footer text-right">
                 </footer>
 
-                    <asp:GridView CssClass="table table-bordered dataTable no-footer" ID="ProductsGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="90%" OnRowEditing="ProductsGrid_RowEditing" DataKeyNames="ID" ForeColor="#666666" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                    <asp:GridView CssClass="table table-bordered dataTable no-footer" ID="ProductsGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="90%" OnRowEditing="ProductsGrid_RowEditing" OnRowDeleting="ProductsGrid_RowDeleting" DataKeyNames="ID" ForeColor="#666666" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                         <Columns>
                             <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"/>

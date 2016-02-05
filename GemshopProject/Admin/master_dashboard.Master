@@ -105,6 +105,11 @@
                        
                             </li>
 
+                            <li>
+                                <a class="waves-effect waves-light" href="slider_managment.aspx">
+                               <i class="ti-paint-bucket"></i><span> Slider Management </span></a>
+                            </li>
+
                             <li class="has_sub">
                                 <a href="#" class="waves-effect waves-light "><i class="ti-shopping-cart"></i><span> eCommerce </span></a>
                                 <ul class="list-unstyled">

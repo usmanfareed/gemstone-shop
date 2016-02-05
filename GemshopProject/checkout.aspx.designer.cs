@@ -13,6 +13,24 @@ namespace GemshopProject {
     public partial class checkout {
         
         /// <summary>
+        /// accountinfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl accountinfo;
+        
+        /// <summary>
+        /// litStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litStatus;
+        
+        /// <summary>
         /// FullName control.
         /// </summary>
         /// <remarks>
@@ -40,13 +58,22 @@ namespace GemshopProject {
         protected global::System.Web.UI.WebControls.TextBox ContactNum;
         
         /// <summary>
-        /// Address control.
+        /// address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Address;
+        protected global::System.Web.UI.WebControls.TextBox address;
+        
+        /// <summary>
+        /// bankdiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bankdiv;
         
         /// <summary>
         /// code control.

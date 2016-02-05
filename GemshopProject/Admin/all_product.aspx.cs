@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,6 +25,22 @@ namespace GemshopProject.Admin
 
             //Redirect user to all products with the selected rowId
             Response.Redirect("~/Admin/product_detail.aspx?id=" + rowId);
+        }
+
+        protected void ProductsGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+         
+
+            //Get Selected row 
+            GridViewRow row = ProductsGrid.Rows[e.RowIndex];
+
+            //Get id of selected product
+            string img = Convert.ToString(row.Cells[5].Text);
+
+            File.Delete(Server.MapPath(img));
+
+
+
         }
     }
 }

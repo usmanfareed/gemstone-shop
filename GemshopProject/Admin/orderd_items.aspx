@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/master_dashboard.Master" AutoEventWireup="true" CodeBehind="orderd_items.aspx.cs" Inherits="GemshopProject.Admin.orderd_items" %>
+﻿                   <%@ Page Title="" Language="C#" MasterPageFile="~/Admin/master_dashboard.Master" AutoEventWireup="true" CodeBehind="orderd_items.aspx.cs" Inherits="GemshopProject.Admin.orderd_items" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="IndexBody" runat="server">
 
 

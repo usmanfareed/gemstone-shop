@@ -25,13 +25,35 @@
     <script src="js/jquery.jqzoom-core.js"></script>
     <script src="js/jquery.transit.js"></script>
     <script src="js/jquery.easing.1.2.js"></script>
-    <script src="js/jquery.anythingslider.js"></script>
-    <script src="js/jquery.anythingslider.fx.js"></script>
+
+
+      
+      <script>
+          $(document).ready(function () {
+
+              $("#search_data").click(function (e) {
+                  e.preventDefault();
+                  var value = $("#textfield").val();
+                  location.href = 'looseGemstones.aspx?search=' + value;
+              });
+          });
+      </script>   
+   
 </head>
+
+
+    
+
+
 <body>
                    <form runat="server">
 
-    <div>
+                
+                       
+                       
+                       
+                       
+                       <div>
         <div id="top">
         <div class="container_12">
            
@@ -69,49 +91,44 @@
                     <h1 id="site_logo"><a href="Home.aspx" title=""><img src="img/logo.png" alt="Online Store Theme Logo"></a></h1>
                 </hgroup>
             </div><!-- .grid_3 -->
+            <div>
+                                                    
 
+                    </div>
             <div class="grid_9">
                 <div class="top_header">
-                    
 
                     <ul id="cart_nav">
+                         <li>
+                  <a class="cart_li" style="background-color:lightgray;margin-left:2px;padding-right:6%;padding-left: 5%;color: windowtext" href="order_status.aspx">
+                   <img title="" alt="Buy" src="../img/compare.png" />
+                      Order Status
+                    </a>
+                      
+                        </li>
                         <li>
-                            <a class="cart_li" href="cart.aspx">
+                  <a class="cart_li" style="background-color:slateblue;margin-left:2px;color: white" href="wishlist.aspx">
+                   <img title="" alt="Buy" src="../img/wishlist.png" />
+                      Wishlist
+                    </a>
+                      
+                        </li>
+                        <li>
+                            <a class="cart_li" style="background-color:darksalmon;color: white" href="cart.aspx">
                                 <div class="cart_ico"></div>
                                 Cart
                             </a>
-                            <ul class="cart_cont">
-                                <li class="no_border recently">Recently added item(s)</li>
-                                <li>
-                                    <a href="product_page.html" class="prev_cart"><div class="cart_vert"><img src="img/content/cart_img.png" alt="Product 1" title=""></div></a>
-                                    <div class="cont_cart">
-                                        <h4>Faddywax Fragrance Diffuser Set <br>Gardenia</h4>
-                                        <div class="price">1 x <span>$399.00</span></div>
-                                    </div>
-                                    <a title="close" class="close" href="#"></a>
-                                    <div class="clear"></div>
-                                </li>
-
-                                <li>
-                                    <a href="product_page.html" class="prev_cart"><div class="cart_vert"><img src="img/content/cart_img2.png" alt="Product 2" title=""></div></a>
-                                    <div class="cont_cart">
-                                        <h4>Caldrea Linen and Room Spray</h4>
-                                        <div class="price">1 x <span>$123.00</span></div>
-                                    </div>
-                                    <a title="close" class="close" href="#"></a>
-                                    <div class="clear"></div>
-                                </li>
+                            <ul class="cart_cont">                                
                                 <li class="no_border">
-                                    <a href="cart.aspx" class="view_cart">View shopping cart</a>
-                                    <a href="checkout.aspx" class="checkout">Procced to Checkout</a>
+                                    <a href="cart.aspx" class="view_cart"></a>
                                 </li>
                             </ul>
                         </li>
                     </ul><!-- .cart_nav -->
 
                     <div class="search">
-                        <input type="submit" class="search_button" value="">
-                        <input type="text" name="search" class="search_form" value="" placeholder="Search entire store here...">
+                        <input id="search_data" type="submit" class="search_button" value="" />
+                        <input id="textfield" type="text" name="search" class="search_form" value="" placeholder="Search entire store here..." />
                     </div><!-- .search -->
                 </div><!-- .top_header -->
             </div><!-- .grid_9 -->
@@ -123,8 +140,8 @@
                     <ul>
                         <li><a href="Home.aspx">Home</a></li>
                         <li><a href="looseGemstones.aspx">GEMSTONES</a></li>
-                        <li><a href="roughGemstones.aspx">ABOUT US</a></li>
-                        <li><a href="mineral_crystal.aspx">CONTACT US</a></li>
+                        <li><a href="aboutus.aspx">ABOUT US</a></li>
+                        <li><a href="contactus.aspx">CONTACT US</a></li>
                                       
                         <li class="parent">
                          <asp:HyperLink ID="dashboard" style="color:teal; background-color:gold;" NavigateUrl="~/Admin/index.aspx" runat="server">Admin Dashboard</asp:HyperLink>
@@ -144,47 +161,33 @@
     <footer>
         <div class="footer_navigation">
             <div class="container_12">
-                <div class="grid_3">
+                <div class="grid_3" style=" margin-left:7%;">
                      <h3>Contact Us</h3>
                     <ul class="f_contact">
-                        <li>49 Archdale, 2B Charlestone</li>
-                        <li>+777 (100) 1234</li>
-                        <li>mail@example.com</li>
+                        <li>3rd Floor EMARAAT HOTEL, Namak Mandi Chowk, Peshawar, Pakistan</li>
+                        <li>PH:+92 91 2214147</li>
+                        <li>syed_nafeesali@yahoo.com</li>
                     </ul><!-- .f_contact -->
                 </div><!-- .grid_3 -->
 
-                <div class="grid_3">
+                <div class="grid_3" style=" margin-left:7%;">
                     <h3>Information</h3>
                     <nav class="f_menu">
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Secure payment</a></li>
+                            <li><a href="aboutus.aspx">About Us</a></li>
+                            
                         </ul>
                     </nav><!-- .private -->
                 </div><!-- .grid_3 -->
 
-                <div class="grid_3">
-                    <h3>Customer Service</h3>
-                    <nav class="f_menu">
-                        <ul>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Return</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Site Map</a></li>
-                        </ul>
-                    </nav><!-- .private -->
-                </div><!-- .grid_3 -->
 
-                <div class="grid_3">
+                <div class="grid_3" style=" margin-left:7%;">
                     <h3>My Account</h3>
                     <nav class="f_menu">
                         <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Order History</a></li>
-                            <li><a href="#">Wish List</a></li>
-                            <li><a href="#">Newsletter</a></li>
+                    
+                            <li><a href="wishlist.aspx">Wish List</a></li>
+                            <li><a href="cart.aspx">Cart</a></li>
                         </ul>
                     </nav><!-- .private -->
                 </div><!-- .grid_3 -->
@@ -195,14 +198,14 @@
         <div class="footer_info">
             <div class="container_12">
                 <div class="grid_6">
-                    <p class="copyright">© Diamond Store Theme, 2013</p>
+                    <p class="copyright"></p>
                 </div><!-- .grid_6 -->
 
                 <div class="grid_6">
                     <div class="soc">
-                        <a class="google" href="#"></a>
-                        <a class="twitter" href="#"></a>
-                        <a class="facebook" href="#"></a>
+                        <a class="google" href="http://www.google.com"></a>
+                        <a class="twitter" href="http://www.twitter.com"></a>
+                        <a class="facebook" href="http://www.facebook.com"></a>
                     </div><!-- .soc -->
                 </div><!-- .grid_6 -->
 
