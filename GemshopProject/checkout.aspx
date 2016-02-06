@@ -52,7 +52,7 @@
                         </div>
 
                         <div id="trans_date_time" runat="server" class="">
-                            <strong>Bank Transaction Date and Time:</strong><sup>*</sup><br>
+                            <strong>Bank Transaction Date and Time:</strong><sup>*</sup> <strong>e.g (01/01/2016 23-59 or 12-59 am) </strong> <br>
                             <asp:TextBox type="text" name="" id="datetime" runat="server"></asp:TextBox>
                         </div>
 

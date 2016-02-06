@@ -38,12 +38,12 @@
                 var Description = $("#category_description").val();
                 if (Name == "" || Name == null) {
 
-                    alert("please Enter Name")
+                    alert("Please Enter Name")
                     
                 }
-                else if (isNaN(Name))
+                else if (!(isNaN(Name)))
                 {
-                    alert("please Enter Valid Name")
+                    alert("Please Enter Valid Name")
                 }
                     else
                     {

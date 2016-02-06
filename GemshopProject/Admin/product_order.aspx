@@ -36,12 +36,12 @@
                                        
                                         
                                         <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" InsertVisible="False" ReadOnly="True" />
-                                          <asp:BoundField DataField="Full Name" HeaderText="full_name" SortExpression="full_name" />
+                                          <asp:BoundField DataField="full_name" HeaderText="Full Name" SortExpression="full_name" />
                                          <asp:BoundField DataField="Order_Date" HeaderText="Order_Date" SortExpression="Order_Date" />
                                         <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
-                                        <asp:BoundField DataField="Transection code" HeaderText="bank_code" SortExpression="bank_code" />
-                                        <asp:BoundField DataField="Transection date and time" HeaderText="transection_date_time" SortExpression="transection_date_time" />
-                                        <asp:BoundField DataField="Total price" HeaderText="total_price" SortExpression="total_price" />
+                                        <asp:BoundField DataField="bank_code" HeaderText="Transection code" SortExpression="bank_code" />
+                                        <asp:BoundField DataField="transection_date_time" HeaderText="Transection date and time" SortExpression="transection_date_time" />
+                                        <asp:BoundField DataField="total_price" HeaderText="Total price" SortExpression="total_price" />
                                         <asp:HyperLinkField HeaderText="User Info" Text="User Info" DataNavigateUrlFields="id"  DataNavigateUrlFormatString="~/checkout.aspx?customerid={0}" />
                                        <asp:HyperLinkField HeaderText="Items" Text="Items" DataNavigateUrlFields="id"  DataNavigateUrlFormatString="orderd_items.aspx?id={0}" />
                                         <asp:TemplateField HeaderText="Action" ShowHeader="False">

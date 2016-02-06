@@ -11,19 +11,17 @@
                 <article>
                     <div class="grid_6 adress">
 			<h3>Address</h3>
-			<p>49 Archdale, 2B Charleston, New York City, USA</p>
+			<p>3rd Floor EMARAAT HOTEL, Namak Mandi Chowk, Peshawar, Pakistan</p>
 			<hr>
 			
 			<h3>Phones</h3>
-			<p>Support: <span>+777 (100) 1234</span><br>
-			Sales manager: <span>+777 (100) 4321</span><br>
-			Director: <span>+777 (100) 1243</span></p>
+			<p>Shop: <span>+92 91 2214147</span><br>
+			Manager: <span>+92 300 9196525</span><br>
 			<hr>
 			
 			<h3>Email Addresses</h3>
-			<p>Support: <span class="mail">support@example.com</span><br>
-			Sales manager: <span class="mail">manager@example.com</span><br>
-			Director: <span class="mail">chief@example.com</span></p>
+			<p>Support: <span class="mail">syed_nafeesali@yahoo.com</span><br>
+			
                     </div><!-- .adress -->
                     
                     

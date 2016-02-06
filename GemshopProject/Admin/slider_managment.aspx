@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <asp:GridView ID="SliderGrid" runat="server" AllowPaging="True" AllowSorting="True" OnRowDeleting="SliderGrid_RowDeleting" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="100%" DataKeyNames="ID" OnRowDataBound="SliderGrid_RowDataBound">
+                                <asp:GridView ID="SliderGrid" runat="server" AllowPaging="True" AllowSorting="True" OnRowDeleting="SliderGrid_RowDeleting" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="100%" DataKeyNames="ID">
                                     <Columns>
                                         
                                         

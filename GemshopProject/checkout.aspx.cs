@@ -140,6 +140,7 @@ namespace GemshopProject
             accountinfo.Visible = false;
             createBtn.Text = "Save";
             bankdiv.Visible = false;
+            trans_date_time.Visible = false;
 
             // get data from the given id
             OrderModel db = new OrderModel();
