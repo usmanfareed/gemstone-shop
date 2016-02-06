@@ -30,7 +30,13 @@ namespace GemshopProject
 
                         ProductID = id
                     };
-                    model.insert_in_wishlist(item);
+
+                    if (!(model.if_already_inserted(Userid,id)))
+
+                    {
+
+                        model.insert_in_wishlist(item);
+                    }
                 }
                 else if (!string.IsNullOrWhiteSpace(Request.QueryString["del"]))
                 {

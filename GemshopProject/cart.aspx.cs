@@ -9,16 +9,19 @@ using GemshopProject.Admin.Models;
 using GemshopProject.Models;
 using System.Web.Services;
 using System.Collections;
+using System.Windows.Forms;
 
 namespace GemshopProject
 {
     public partial class cart : System.Web.UI.Page
     {
+        int available_quantity;
         protected void Page_Load(object sender, EventArgs e)
         {
             string Userid = Context.User.Identity.GetUserId();
             Session["Userid"] = Userid;
             PurchaseModel model = new PurchaseModel();
+            ProductModel productmodel = new ProductModel();
             if (Userid != null)
             {
                 
@@ -27,11 +30,17 @@ namespace GemshopProject
             {
                 int id = Convert.ToInt32(Request.QueryString["id"]);
                     int value = 1;
+                    int quan =0;
                     if(!string.IsNullOrWhiteSpace(Request.QueryString["quan"]))
-                        {
+                    {
                         value = Convert.ToInt32(Request.QueryString["quan"]);
                     }
-                
+
+                    if (!string.IsNullOrWhiteSpace(Request.QueryString["quantity"]))
+                    {
+                        quan = Convert.ToInt32(Request.QueryString["quantity"]);
+                    }
+
                     Purchase cart = new Purchase
                 {
                     Quantity = value,
@@ -39,7 +48,39 @@ namespace GemshopProject
                     DateTime = Convert.ToString(DateTime.Now),
                     ProductID = id
                 };
-                model.insert_purchase(cart);
+                    int purchaseid = model.check_order_product(Userid, id);
+                    int purchasequantity = model.check_order_quantity(Userid, id);
+                    int purchaseproductid = model.check_order_productid(Userid, id);
+                    available_quantity = productmodel.available_quantity_product(id);
+
+
+                    //Session["avail_quantity"] = available_quantity;
+
+                    if (purchaseid == 0)
+                    {
+                        model.insert_purchase(cart);
+                    }
+                    
+                    else if (quan != 0)
+                    {
+                        if (quan > available_quantity)
+                        {
+                            MessageBox.Show("Quantity selected is more than Available Quantity");
+                        }
+                        else
+                        { 
+                        update_quantity(purchaseid, quan);
+                         }
+                    }
+
+                    else if (purchasequantity == available_quantity)
+                    {
+                        MessageBox.Show("Product Quantity is already equal to Available Quantity");
+                    }
+                    else
+                    {
+                        update_quantity(purchaseid, purchasequantity+1);
+                    }
             }
             else if (!string.IsNullOrWhiteSpace(Request.QueryString["del"]))
             {
@@ -49,12 +90,21 @@ namespace GemshopProject
             }
 
 
-            else if (!string.IsNullOrWhiteSpace(Request.QueryString["pur_id"]))
-            {
-                int id = Convert.ToInt32(Request.QueryString["pur_id"]);
-                int value = Convert.ToInt32(Request.QueryString["quan"]);
-                update_quantity(id, value);
-            }
+            //else if (!string.IsNullOrWhiteSpace(Request.QueryString["pur_id"]))
+            //{
+            //    int id = Convert.ToInt32(Request.QueryString["pur_id"]);
+            //    int value = Convert.ToInt32(Request.QueryString["quan"]);
+            //    string userId = Convert.ToString(HttpContext.Current.Session["Userid"]);
+            //    if (value > available_quantity)
+            //        {
+            //            System.Windows.Forms.MessageBox.Show("Quantity selected is more than Available Quantity");
+            //        }
+            //        else
+            //        {
+
+            //        }
+                    
+            //}
             }
             else
             {
@@ -103,8 +153,9 @@ namespace GemshopProject
                 cart.image = product.Image;
                 cart.name = product.Name;
                 cart.price = product.Price;
+                cart.avail_quantity = product.AvailableQuantity;
                 cart.quantity = purchase.Quantity;
-                cart.purchaseid = purchase.ID;
+                cart.purchaseid = product.ID ;
                 info.Add(cart);
                 
             }
@@ -121,6 +172,7 @@ namespace GemshopProject
             public string name { get; set; }
 
             public int quantity { get; set; }
+            public int avail_quantity { get; set; }
 
             public double price { get; set; }
             public int purchaseid { get; set; }

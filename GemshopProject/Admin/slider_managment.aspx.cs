@@ -13,6 +13,7 @@ namespace GemshopProject.Admin
 {
     public partial class slider_managment : System.Web.UI.Page
     {
+        string path = null;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -22,7 +23,7 @@ namespace GemshopProject.Admin
         {
             SliderModel db = new SliderModel();
 
-            string path = null;
+            
             string filename = Path.GetFileName(import_image.FileName);
             import_image.SaveAs(Server.MapPath("~/images/") + filename);
             path = "/images/" + filename;
@@ -33,10 +34,11 @@ namespace GemshopProject.Admin
             data.Name = name.Text;
             data.ProductID = Convert.ToInt32(DropDownList1.SelectedValue);
             data.image_path = path;
-            
 
-            db.insert_slider(data);
-
+            if (validation())
+            {
+                db.insert_slider(data);
+            }
             Response.Redirect("slider_managment.aspx");
 
 
@@ -53,9 +55,26 @@ namespace GemshopProject.Admin
             File.Delete(Server.MapPath(img));
         }
 
-        protected void SliderGrid_RowDataBound(object sender, GridViewRowEventArgs e)
+        private bool validation()
         {
-           
+
+            int n;
+            if ((name.Text == "") || int.TryParse(name.Text, out n))
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Name field is empty or invalid </font>");
+                return false;
+            }
+            
+            else if (path == "" || path == null )
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Please Select Image </font>");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
+
     }
 }

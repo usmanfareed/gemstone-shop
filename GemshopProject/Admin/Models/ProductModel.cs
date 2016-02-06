@@ -182,6 +182,15 @@ namespace GemshopProject.Admin.Models
 
         }
 
+        public int available_quantity_product(int product)
+        {
+            ShopDBContext db = new ShopDBContext();
+            int quantity = (from x in db.Products
+                          where x.ID == product
+                          select x.AvailableQuantity).FirstOrDefault();
+            return quantity;
+        }
+
     }
 }
 

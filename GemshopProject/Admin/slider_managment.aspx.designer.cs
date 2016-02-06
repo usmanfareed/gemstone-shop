@@ -13,6 +13,15 @@ namespace GemshopProject.Admin {
     public partial class slider_managment {
         
         /// <summary>
+        /// litStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litStatus;
+        
+        /// <summary>
         /// name control.
         /// </summary>
         /// <remarks>

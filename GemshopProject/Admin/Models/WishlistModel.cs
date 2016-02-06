@@ -65,6 +65,14 @@ namespace GemshopProject.Admin.Models
             return items;
         }
 
+        public bool if_already_inserted(string userID , int productid)
+        {
+            ShopDBContext db = new ShopDBContext();
+            bool product = (from x in db.Wishlist
+                                    where x.UsersID == userID && x.ProductID == productid
+                                    select x).Any();
+            return product;
+        }
 
     }
 }

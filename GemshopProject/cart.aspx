@@ -27,6 +27,7 @@
                            ' <td class="name">' + d[i].name + ' </td>' +
                            ' <td class="price">' + d[i].price + '</td>' +
                            ' <td  class="qty"> <input id="' + d[i].purchaseid + '"  type="text" class="update" onChange="update_quantity(this);" value="' + d[i].quantity + '" /> </td>' +
+                           ' <td  class="qty"> ' + d[i].avail_quantity + ' </td>' +
                            ' <td class="subtotal">' + subtotal + '</td>' +
                            ' <td class="close"><a title="close" class="close" href="cart.aspx?del=' + d[i].purchaseid + '"></a></td>' +
                             '</tr>'
@@ -62,7 +63,7 @@
             var value = $(e).attr("value");
             if(!(isNaN(value)))
                 {
-            location.href = 'cart.aspx?pur_id='+id+'&quan='+value;
+            location.href = 'cart.aspx?id='+id+'&quantity='+value;
             }
             else {
                 alert("Please enter valid Quantity")
@@ -120,6 +121,7 @@
                             <th class="name">Product Name</th>
                             <th class="price">Unit Price</th>
                             <th class="qty">Qty</th>
+                            <th class="qty">Available Qty</th>
                             <th class="subtotal">Subtotal</th>
                             <th class="close"> </th>
                         </tr>

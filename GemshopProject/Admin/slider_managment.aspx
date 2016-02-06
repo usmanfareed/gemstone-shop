@@ -30,6 +30,7 @@
                                 <div class="row">
                                     <div class="">
                                         <div class="m-b-30">
+                                            <asp:Literal ID="litStatus" runat="server"></asp:Literal>
                                             Name: <asp:textbox ID="name" runat="server" ></asp:textbox>
                                             Select Product: <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="ID" Height="23px" Width="199px"></asp:DropDownList>
                                             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GemshopDatabaseConnectionString %>" SelectCommand="SELECT [ID], [Name] FROM [Products]"></asp:SqlDataSource>
@@ -53,6 +54,8 @@
                                             </asp:SqlDataSource>
                                             <asp:FileUpload ID="import_image" accept=".png,.jpg,.jpeg,.gif" AllowMultiple="false" runat="server" CssClass="fileupload btn btn-purple btn-md w-md waves-effect waves-light ion-upload m-r-5"  />
                                             <a runat="server" onserverclick="create_ServerClick" style="float:right;margin-right: 75px;padding: 13px" class="btn btn-default btn-md waves-effect waves-light m-b-30" > Add Slider Image</a>
+
+
 
                                         </div>
                                     </div>

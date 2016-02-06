@@ -137,18 +137,32 @@ namespace GemshopProject.Admin.Models
 
     }
 
-    public void mark_paid(List<Purchase> purchases)
-    {
-        ShopDBContext db = new ShopDBContext();
-        if (purchases != null)
+        public int check_order_product(string userID,int product)
         {
-            foreach (Purchase purchase in purchases)
-            {
-                Purchase oldpurchase = db.Purchases.Find(purchase.ID);
-                oldpurchase.DateTime = DateTime.Now.ToString();
-            }
-            db.SaveChanges();
+            ShopDBContext db = new ShopDBContext();
+            int orders = (from x in db.Purchases
+                                     where x.UsersID == userID && product == x.ProductID
+                                     select x.ID).FirstOrDefault();
+            return orders;
         }
+
+        public int check_order_quantity(string userID, int product)
+        {
+            ShopDBContext db = new ShopDBContext();
+            int orders = (from x in db.Purchases
+                          where x.UsersID == userID && product == x.ProductID
+                          select x.Quantity).FirstOrDefault();
+            return orders;
+        }
+
+        public int check_order_productid(string userID, int product)
+        {
+            ShopDBContext db = new ShopDBContext();
+            int orders = (from x in db.Purchases
+                          where x.UsersID == userID && product == x.ProductID
+                          select x.ProductID).FirstOrDefault();
+            return orders;
+        }
+
     }
-}
 }

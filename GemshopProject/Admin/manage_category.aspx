@@ -36,25 +36,35 @@
                 e.preventDefault();
                 var Name = $("#category_name").val();
                 var Description = $("#category_description").val();
-                var PostData = {
-                    Name,
-                    Description
-                };
-                $.ajax({
-                    type: "POST",
-                    url: 'manage_category.aspx/insert_category',
-                    data: '{context:' + JSON.stringify(PostData) + ' }',
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "JSON",
-                    success: function(output)
-                    {
-                        
-                        location.reload();
+                if (Name == "" || Name == null) {
 
+                    alert("please Enter Name")
                     
-                    }
-                })
+                }
+                else if (isNaN(Name))
+                {
+                    alert("please Enter Valid Name")
+                }
+                    else
+                    {
+                    var PostData = {
+                        Name,
+                        Description
+                    };
+                    $.ajax({
+                        type: "POST",
+                        url: 'manage_category.aspx/insert_category',
+                        data: '{context:' + JSON.stringify(PostData) + ' }',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "JSON",
+                        success: function (output) {
 
+                            location.reload();
+
+
+                    }
+                    })
+                }
             });
         });
 
