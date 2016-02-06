@@ -13,5 +13,10 @@ namespace GemshopProject.Admin
         {
 
         }
+
+        protected void Orders_grid_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            
+        }
     }
 }

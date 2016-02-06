@@ -27,7 +27,7 @@
                                 <div class="row">
                                    
                                 </div>
-                                <asp:GridView ID="Orders_grid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="100%" DataKeyNames="id" RowStyle-Wrap="false">
+                                <asp:GridView ID="Orders_grid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="100%" DataKeyNames="id" RowStyle-Wrap="false" OnRowDataBound="Orders_grid_RowDataBound">
                                     <Columns>
                                         
                                        
@@ -41,11 +41,22 @@
                                         <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
                                        <asp:HyperLinkField HeaderText="User Info" Text="User Info" DataNavigateUrlFields="id"  DataNavigateUrlFormatString="~/checkout.aspx?customerid={0}" />
                                        <asp:HyperLinkField HeaderText="Items" Text="Items" DataNavigateUrlFields="id"  DataNavigateUrlFormatString="orderd_items.aspx?id={0}" />
-                                        <asp:CommandField HeaderText="Action" ShowDeleteButton="True" ShowEditButton="True" />
+                                        <asp:TemplateField HeaderText="Action" ShowHeader="False">
+                                            <EditItemTemplate>
+                                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                                                &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                                                &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" OnClientClick="return confirm('Are you sure you want to delete?'); " CommandName="Delete" Text="Delete"></asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
 
 
 
                                     </Columns>
+
+<RowStyle Wrap="False"></RowStyle>
                                 </asp:GridView>
                                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GemshopDatabaseConnectionString %>" SelectCommand="SELECT [id], [total_price], [Order_Date], [status] FROM [orders]" DeleteCommand="DELETE FROM [orders] WHERE [id] = @original_id AND [total_price] = @original_total_price AND (([Order_Date] = @original_Order_Date) OR ([Order_Date] IS NULL AND @original_Order_Date IS NULL)) AND (([status] = @original_status) OR ([status] IS NULL AND @original_status IS NULL))" InsertCommand="INSERT INTO [orders] ([total_price], [Order_Date], [status]) VALUES (@total_price, @Order_Date, @status)" UpdateCommand="UPDATE [orders] SET [total_price] = @total_price, [Order_Date] = @Order_Date, [status] = @status WHERE [id] = @original_id AND [total_price] = @original_total_price AND (([Order_Date] = @original_Order_Date) OR ([Order_Date] IS NULL AND @original_Order_Date IS NULL)) AND (([status] = @original_status) OR ([status] IS NULL AND @original_status IS NULL))" ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}">
                                     <DeleteParameters>

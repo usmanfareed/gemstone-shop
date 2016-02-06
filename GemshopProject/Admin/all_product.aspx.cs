@@ -42,5 +42,10 @@ namespace GemshopProject.Admin
 
 
         }
+
+        protected void ProductsGrid_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            
+        }
     }
 }

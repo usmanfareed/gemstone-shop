@@ -115,7 +115,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <asp:GridView ID="CategoriesGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" Width="100%">
+                                <asp:GridView ID="CategoriesGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" Width="100%" OnRowDataBound="CategoriesGrid_RowDataBound">
                                     <Columns>
                                         <asp:BoundField DataField="ID" HeaderText="  ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
                                         <asp:BoundField DataField="Name" HeaderText="  Name" SortExpression="Name" />

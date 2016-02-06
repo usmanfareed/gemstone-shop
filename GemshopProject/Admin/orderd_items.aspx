@@ -38,6 +38,7 @@
                             <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
                             <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="~/product_detail.aspx?id={0}" HeaderText="Link" Text="Product Info" />
 
+
                         </Columns>
                         <FooterStyle BackColor="White" ForeColor="#333333" />
                         <HeaderStyle BackColor="#6afbcc" Font-Bold="True" ForeColor="#666666" />

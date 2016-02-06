@@ -46,7 +46,16 @@
                                         <asp:BoundField DataField="Contact" HeaderText="Contact" SortExpression="Contact" />
                                         <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
                                         <asp:BoundField DataField="reg_Date" HeaderText="reg_Date" SortExpression="reg_Date" />
-                                        <asp:CommandField HeaderText="   Action" ShowDeleteButton="True" ShowEditButton="True" />
+                                        <asp:TemplateField HeaderText="   Action" ShowHeader="False">
+                                            <EditItemTemplate>
+                                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                                                &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                                            </EditItemTemplate>
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                                                &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" OnClientClick="return confirm('Are you sure you want to delete?'); " CommandName="Delete" Text="Delete"></asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
 
 
                                     </Columns>

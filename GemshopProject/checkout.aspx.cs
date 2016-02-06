@@ -34,7 +34,7 @@ namespace GemshopProject
                 FillPage(Userid);
                 Session["userid"] = Userid;
             }
-            else if(Context.User.Identity.GetUserId() == null && HttpContext.Current.Session["customerid"] == null)
+            else if (Context.User.Identity.GetUserId() == null && HttpContext.Current.Session["customerid"] == null)
             {
                 Response.Redirect("loginPage.aspx");
             }
@@ -44,12 +44,12 @@ namespace GemshopProject
                 Session["total_price"] = price;
             }
 
-            
+
 
 
         }
 
-       
+
         private void FillPage(string id)
         {
             // get data from the given id
@@ -80,15 +80,18 @@ namespace GemshopProject
                 order.email = email.Text;
                 order.contact_num = Convert.ToInt64(ContactNum.Text);
                 order.current_address = address.Text;
-                
+
                 db.update_userinfo(customerid, order);
 
 
             }
             else {
 
-                if (!string.IsNullOrWhiteSpace(FullName.Text) && !string.IsNullOrWhiteSpace(email.Text) && !string.IsNullOrWhiteSpace(ContactNum.Text) && !string.IsNullOrWhiteSpace(address.Text) && !string.IsNullOrWhiteSpace(code.Text))
+                if (validation())
                 {
+
+
+
                     OrderModel db = new OrderModel();
                     string userid = Convert.ToString(HttpContext.Current.Session["userid"]);
                     orders order = new orders();
@@ -124,17 +127,13 @@ namespace GemshopProject
 
 
                 }
-                else
-                {
-                    litStatus.Text = String.Format("<font style='color : red;'> Please Complete All the Remaining Fields </font>");
 
-                }
             }
-            }
+        }
 
 
 
-          private void getdata(int id)
+        private void getdata(int id)
         {
             accountinfo.Visible = false;
             createBtn.Text = "Save";
@@ -143,7 +142,7 @@ namespace GemshopProject
             // get data from the given id
             OrderModel db = new OrderModel();
             orders user = db.Get_order_userinfo(id);
-            
+
             // fill text boxes with the new data
 
             FullName.Text = user.full_name;
@@ -154,13 +153,59 @@ namespace GemshopProject
 
         }
 
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        private bool validation()
+        {
+
+            int n;
+            double d;
+            if ((FullName.Text == "") || int.TryParse(FullName.Text, out n))
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Full Name field is empty or invalid </font>");
+                return false;
+            }
+            else if ((ContactNum.Text == "") || !(double.TryParse(ContactNum.Text, out d)))
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Contact Number field is empty or invalid </font>");
+                return false;
+            }
+            else if ((code.Text == "") || !(int.TryParse(code.Text, out n)))
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Bank Transection Code field is empty or invalid </font>");
+                return false;
+            }
+            else if ((address.Text == ""))
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Address field is empty </font>");
+                return false;
+            }
+            else if ((email.Text == "") || !(IsValidEmail(email.Text)))
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Email field is empty or invalid </font>");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
 
 
     }
-
-
-        
-
 
     
 }

@@ -29,5 +29,14 @@ namespace GemshopProject.Admin
             return "Success";
 
         }
+
+        protected void CategoriesGrid_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                LinkButton del = e.Row.Cells[3].Controls[2] as LinkButton;
+                del.Attributes.Add("onclick", "return confirm('Are you sure you want to delete this event?');");
+            }
+        }
     }
 }

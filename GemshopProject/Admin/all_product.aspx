@@ -30,7 +30,7 @@
                 <footer class="footer text-right">
                 </footer>
 
-                    <asp:GridView CssClass="table table-bordered dataTable no-footer" ID="ProductsGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="90%" OnRowEditing="ProductsGrid_RowEditing" OnRowDeleting="ProductsGrid_RowDeleting" DataKeyNames="ID" ForeColor="#666666" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                    <asp:GridView CssClass="table table-bordered dataTable no-footer" ID="ProductsGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="90%" OnRowEditing="ProductsGrid_RowEditing" OnRowDeleting="ProductsGrid_RowDeleting" DataKeyNames="ID" ForeColor="#666666" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" OnRowDataBound="ProductsGrid_RowDataBound">
                         <Columns>
                             <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"/>
@@ -40,7 +40,19 @@
                             <asp:BoundField DataField="Image" HeaderText="Image" SortExpression="Image" />
                             <asp:BoundField DataField="DateUpdated" HeaderText="DateUpdated" SortExpression="DateUpdated" />
                             <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" />
-                            <asp:CommandField HeaderText="Action" ShowDeleteButton="True" ShowEditButton="True" />
+                            <asp:TemplateField HeaderText="Action" ShowHeader="False">
+                                <EditItemTemplate>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                                    &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                                    &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" OnClientClick="return confirm('Are you sure you want to delete?'); " CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
+                            <asp:ImageField HeaderText="Picture" DataImageUrlField="Image" ControlStyle-Width="70" ControlStyle-Height = "70">
+                            </asp:ImageField>
 
                         </Columns>
                         <FooterStyle BackColor="White" ForeColor="#333333" />

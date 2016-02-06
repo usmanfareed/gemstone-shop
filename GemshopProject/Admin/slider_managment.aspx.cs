@@ -52,5 +52,10 @@ namespace GemshopProject.Admin
 
             File.Delete(Server.MapPath(img));
         }
+
+        protected void SliderGrid_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+           
+        }
     }
 }

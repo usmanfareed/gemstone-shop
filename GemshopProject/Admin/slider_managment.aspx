@@ -57,14 +57,21 @@
                                         </div>
                                     </div>
                                 </div>
-                                <asp:GridView ID="SliderGrid" runat="server" AllowPaging="True" AllowSorting="True" OnRowDeleting="SliderGrid_RowDeleting" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="100%" DataKeyNames="ID">
+                                <asp:GridView ID="SliderGrid" runat="server" AllowPaging="True" AllowSorting="True" OnRowDeleting="SliderGrid_RowDeleting" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="100%" DataKeyNames="ID" OnRowDataBound="SliderGrid_RowDataBound">
                                     <Columns>
                                         
                                         
                                         <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
                                         <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                                         <asp:BoundField DataField="image_path" HeaderText="image_path" SortExpression="image_path" />
-                                                                                <asp:CommandField ShowDeleteButton="True" />
+                                                                                <asp:TemplateField ShowHeader="True" HeaderText="Action">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:LinkButton ID="LinkButton1" runat="server" OnClientClick="return confirm('Are you sure you want to delete?'); " CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
+                                                                                    </ItemTemplate>
+                                        </asp:TemplateField>
+
+                                        <asp:ImageField HeaderText="Picture" DataImageUrlField="image_path" ControlStyle-Width="150" ControlStyle-Height = "70">
+                            </asp:ImageField>
 
                                     </Columns>
                                     </asp:GridView>

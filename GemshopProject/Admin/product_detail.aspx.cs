@@ -41,20 +41,14 @@ namespace GemshopProject.Admin
             string path = null;
             try
             {
-                if (import_image.PostedFile.ContentType == "image/jpeg")
-                {
-
+                
                     string filename = Path.GetFileName(import_image.FileName);
                     import_image.SaveAs(Server.MapPath("~/images/") + filename);
                     path = "/images/" + filename;
                     StatusLabel.Text = path;
 
 
-                }
-                else
-                {
-                    StatusLabel.Text = "Upload status: Only JPEG files are accepted!";
-                }
+                
             }
             catch (Exception ex)
             {
