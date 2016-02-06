@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/master_dashboard.Master" AutoEventWireup="true" CodeBehind="product_order.aspx.cs" Inherits="GemshopProject.Admin.product_order" %>
 <asp:Content ID="product_order" ContentPlaceHolderID="IndexBody" runat="server">
-        <form id="form2" runat="server">
+        <form id="form2" runat="server" >
 
-                <div class="content-page">
+                <div class="content-page" style="overflow:auto">
                 <!-- Start content -->
                 				<div class="content">
 					<div class="container">
@@ -98,7 +98,6 @@
                     2015 © Ubold.
                 </footer>
 
-            </div>
             </form>
 
 </asp:Content>

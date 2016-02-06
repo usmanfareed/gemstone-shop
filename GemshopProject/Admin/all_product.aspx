@@ -3,7 +3,7 @@
 
                 <form id="form1" runat="server">
 
-                <div class="content-page">
+                <div class="content-page" style="overflow:auto">
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
@@ -110,7 +110,7 @@ WHERE [ID] = @ID">
                     </asp:SqlDataSource>
 
             </div>
-
+                    </div>
 
                 </form>
 </asp:Content>

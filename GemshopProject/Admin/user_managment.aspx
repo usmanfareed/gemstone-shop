@@ -2,10 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="IndexBody" runat="server">
 
 
-        			<form id="form1" runat="server">
+        			<form id="form1" runat="server" >
 
 
-        			<div class="content-page">
+        			<div class="content-page" style="overflow:auto">
 				<!-- Start content -->
 				<div class="content">
 					<div class="container">
@@ -114,7 +114,6 @@ where  [ID] = @ID" InsertCommand="INSERT INTO [GemshopDatabase].[dbo].[Categorie
 
                 </footer>
 
-            </div>
 
 
 

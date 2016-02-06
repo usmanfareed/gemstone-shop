@@ -82,7 +82,7 @@
     </script>
 
 
-    			<div class="content-page">
+    			<div class="content-page" style="overflow:auto">
 				<!-- Start content -->
 				<div class="content">
 					<div class="container">

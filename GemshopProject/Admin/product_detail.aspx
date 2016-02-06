@@ -3,7 +3,7 @@
              
 
 <asp:Content ID="product_detail" ContentPlaceHolderID="IndexBody" runat="server">
-    <form id="form2" runat="server">
+    <form id="form2" runat="server" >
 
 
    <%-- <script>
@@ -104,7 +104,7 @@
     </script>
 
 
-    <div class="content-page">
+    <div class="content-page" style="overflow:auto">
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">

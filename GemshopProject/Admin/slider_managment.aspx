@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/master_dashboard.Master" AutoEventWireup="true" CodeBehind="slider_managment.aspx.cs" Inherits="GemshopProject.Admin.slider_managment" %>
+﻿<%@ Page Title="" Language="C#" MaintainScrollPositionOnPostback="true" MasterPageFile="~/Admin/master_dashboard.Master" AutoEventWireup="true" CodeBehind="slider_managment.aspx.cs" Inherits="GemshopProject.Admin.slider_managment" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="IndexBody" runat="server">
     <form runat="server">
 
@@ -26,7 +26,7 @@
 
                         <div class="panel">
                             
-                            <div class="panel-body">
+                            <div class="panel-body" style="overflow:auto">
                                 <div class="row">
                                     <div class="">
                                         <div class="m-b-30">

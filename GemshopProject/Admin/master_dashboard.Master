@@ -110,15 +110,29 @@
                                <i class="ti-paint-bucket"></i><span> Slider Management </span></a>
                             </li>
 
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect waves-light "><i class="ti-shopping-cart"></i><span> eCommerce </span></a>
-                                <ul class="list-unstyled">
-                                    <li id="category"><a href="manage_category.aspx"> Category</a></li>
-                                    <li id="all_product"><a href="all_product.aspx"> Products</a></li>
-                                    <li id="product_detail"><a href="product_detail.aspx"> Product Detail</a></li>
-                                    <li id="product_order"><a href="product_order.aspx"> Orders</a></li>
-                                </ul>
+
+                            <li>
+                                <a class="waves-effect waves-light" href="product_order.aspx">
+                               <i class=" ti-shopping-cart-full "></i><span> Orders </span></a>
                             </li>
+
+                            <li>
+                                <a class="waves-effect waves-light" href="product_detail.aspx">
+                               <i class="ti-gallery"></i><span> Add Product </span></a>
+                            </li>
+                             <li>
+                                <a class="waves-effect waves-light" href="all_product.aspx">
+                               <i class=" ti-layout-grid3 "></i><span> Products </span></a>
+                            </li>
+
+                             <li>
+                                <a class="waves-effect waves-light" href="manage_category.aspx">
+                               <i class=" ti-layout-grid2 "></i><span> Categories </span></a>
+                            </li>
+
+                             
+
+                            
 
                         </ul>
                         <div class="clearfix"></div>
