@@ -101,6 +101,7 @@ namespace GemshopProject
                     order.contact_num = Convert.ToInt64(ContactNum.Text);
                     order.current_address = address.Text;
                     order.bank_code = Convert.ToInt64(code.Text);
+                    order.transection_date_time = datetime.Text;
                     order.total_price = Convert.ToInt32(HttpContext.Current.Session["total_price"]);
                     order.User_ID = userid;
                     order.Order_Date = Convert.ToString(date_added);
@@ -183,9 +184,9 @@ namespace GemshopProject
                 litStatus.Text = String.Format("<font style='color : red;'> Contact Number field is empty or invalid </font>");
                 return false;
             }
-            else if ((code.Text == "") || !(int.TryParse(code.Text, out n)))
+            else if (((code.Text == "") || !(int.TryParse(code.Text, out n)))  || (datetime.Text == ""))
             {
-                litStatus.Text = String.Format("<font style='color : red;'> Bank Transection Code field is empty or invalid </font>");
+                litStatus.Text = String.Format("<font style='color : red;'> Bank Transection Code / Transection Date and Time field is empty or invalid</font>");
                 return false;
             }
             else if ((address.Text == ""))

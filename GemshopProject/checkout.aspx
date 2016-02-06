@@ -50,6 +50,12 @@
                             <strong>Bank Transaction Code:</strong><sup>*</sup><br>
                             <asp:TextBox type="text" name="" id="code" runat="server"></asp:TextBox>
                         </div>
+
+                        <div id="trans_date_time" runat="server" class="">
+                            <strong>Bank Transaction Date and Time:</strong><sup>*</sup><br>
+                            <asp:TextBox type="text" name="" id="datetime" runat="server"></asp:TextBox>
+                        </div>
+
                         <div class="submit">
                             <asp:Button ID="createBtn" runat="server" Text="Confirm Order" OnClick="createBtn_Click" />
 

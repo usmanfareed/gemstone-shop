@@ -32,9 +32,9 @@
                     <asp:GridView CssClass="table table-bordered dataTable no-footer" ID="odered_items_Grid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
                         <Columns>
                             <asp:BoundField DataField="ordersID" HeaderText="ordersID" SortExpression="ordersID" />
-                            <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True"/>
+                            <asp:BoundField DataField="ID" HeaderText="Product ID" SortExpression="ID" InsertVisible="False" ReadOnly="True"/>
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-                            <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                            <asp:BoundField DataField="Price" HeaderText="Price per unit" SortExpression="Price" />
                             <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
                             <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="~/product_detail.aspx?id={0}" HeaderText="Link" Text="Product Info" />
 

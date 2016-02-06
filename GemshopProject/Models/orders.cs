@@ -29,6 +29,7 @@ namespace GemshopProject.Models
         
         public string status { get; set; }
         public Int64 bank_code { get; set; }
+        public string transection_date_time { get; set; }
         public List<ordered_items> ordered_items  { get; set; }
     }
 }

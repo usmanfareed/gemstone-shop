@@ -36,10 +36,12 @@
                                        
                                         
                                         <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" InsertVisible="False" ReadOnly="True" />
-                                          <asp:BoundField DataField="full_name" HeaderText="full_name" SortExpression="full_name" />
+                                          <asp:BoundField DataField="Full Name" HeaderText="full_name" SortExpression="full_name" />
                                          <asp:BoundField DataField="Order_Date" HeaderText="Order_Date" SortExpression="Order_Date" />
-                                        <asp:BoundField DataField="bank_code" HeaderText="bank_code" SortExpression="bank_code" />
                                         <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
+                                        <asp:BoundField DataField="Transection code" HeaderText="bank_code" SortExpression="bank_code" />
+                                        <asp:BoundField DataField="Transection date and time" HeaderText="transection_date_time" SortExpression="transection_date_time" />
+                                        <asp:BoundField DataField="Total price" HeaderText="total_price" SortExpression="total_price" />
                                         <asp:HyperLinkField HeaderText="User Info" Text="User Info" DataNavigateUrlFields="id"  DataNavigateUrlFormatString="~/checkout.aspx?customerid={0}" />
                                        <asp:HyperLinkField HeaderText="Items" Text="Items" DataNavigateUrlFields="id"  DataNavigateUrlFormatString="orderd_items.aspx?id={0}" />
                                         <asp:TemplateField HeaderText="Action" ShowHeader="False">
@@ -53,35 +55,42 @@
                                             </ItemTemplate>
                                         </asp:TemplateField>
 
-
                                     </Columns>
 
 <RowStyle Wrap="False"></RowStyle>
                                 </asp:GridView>
-                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GemshopDatabaseConnectionString %>" SelectCommand="SELECT [id], [full_name], [Order_Date], [bank_code], [status] FROM [orders]" DeleteCommand="DELETE FROM [orders] WHERE [id] = @original_id AND [full_name] = @original_full_name AND (([Order_Date] = @original_Order_Date) OR ([Order_Date] IS NULL AND @original_Order_Date IS NULL)) AND [bank_code] = @original_bank_code AND (([status] = @original_status) OR ([status] IS NULL AND @original_status IS NULL))" InsertCommand="INSERT INTO [orders] ([full_name], [Order_Date], [bank_code], [status]) VALUES (@full_name, @Order_Date, @bank_code, @status)" UpdateCommand="UPDATE [orders] SET [full_name] = @full_name, [Order_Date] = @Order_Date, [bank_code] = @bank_code, [status] = @status WHERE [id] = @original_id AND [full_name] = @original_full_name AND (([Order_Date] = @original_Order_Date) OR ([Order_Date] IS NULL AND @original_Order_Date IS NULL)) AND [bank_code] = @original_bank_code AND (([status] = @original_status) OR ([status] IS NULL AND @original_status IS NULL))" ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}">
+                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GemshopDatabaseConnectionString %>" SelectCommand="SELECT [id], [full_name], [Order_Date], [status], [bank_code], [transection_date_time], [total_price] FROM [orders]" DeleteCommand="DELETE FROM [orders] WHERE [id] = @original_id AND [full_name] = @original_full_name AND (([Order_Date] = @original_Order_Date) OR ([Order_Date] IS NULL AND @original_Order_Date IS NULL)) AND (([status] = @original_status) OR ([status] IS NULL AND @original_status IS NULL)) AND [bank_code] = @original_bank_code AND (([transection_date_time] = @original_transection_date_time) OR ([transection_date_time] IS NULL AND @original_transection_date_time IS NULL)) AND [total_price] = @original_total_price" InsertCommand="INSERT INTO [orders] ([full_name], [Order_Date], [status], [bank_code], [transection_date_time], [total_price]) VALUES (@full_name, @Order_Date, @status, @bank_code, @transection_date_time, @total_price)" UpdateCommand="UPDATE [orders] SET [full_name] = @full_name, [Order_Date] = @Order_Date, [status] = @status, [bank_code] = @bank_code, [transection_date_time] = @transection_date_time, [total_price] = @total_price WHERE [id] = @original_id AND [full_name] = @original_full_name AND (([Order_Date] = @original_Order_Date) OR ([Order_Date] IS NULL AND @original_Order_Date IS NULL)) AND (([status] = @original_status) OR ([status] IS NULL AND @original_status IS NULL)) AND [bank_code] = @original_bank_code AND (([transection_date_time] = @original_transection_date_time) OR ([transection_date_time] IS NULL AND @original_transection_date_time IS NULL)) AND [total_price] = @original_total_price" ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}">
                                     <DeleteParameters>
                                         <asp:Parameter Name="original_id" Type="Int32" />
                                         <asp:Parameter Name="original_full_name" Type="String" />
                                         <asp:Parameter Name="original_Order_Date" Type="String" />
-                                        <asp:Parameter Name="original_bank_code" Type="Int64" />
                                         <asp:Parameter Name="original_status" Type="String" />
+                                        <asp:Parameter Name="original_bank_code" Type="Int64" />
+                                        <asp:Parameter Name="original_transection_date_time" Type="String" />
+                                        <asp:Parameter Name="original_total_price" Type="Int32" />
                                     </DeleteParameters>
                                     <InsertParameters>
                                         <asp:Parameter Name="full_name" Type="String" />
                                         <asp:Parameter Name="Order_Date" Type="String" />
-                                        <asp:Parameter Name="bank_code" Type="Int64" />
                                         <asp:Parameter Name="status" Type="String" />
+                                        <asp:Parameter Name="bank_code" Type="Int64" />
+                                        <asp:Parameter Name="transection_date_time" Type="String" />
+                                        <asp:Parameter Name="total_price" Type="Int32" />
                                     </InsertParameters>
                                     <UpdateParameters>
                                         <asp:Parameter Name="full_name" Type="String" />
                                         <asp:Parameter Name="Order_Date" Type="String" />
-                                        <asp:Parameter Name="bank_code" Type="Int64" />
                                         <asp:Parameter Name="status" Type="String" />
+                                        <asp:Parameter Name="bank_code" Type="Int64" />
+                                        <asp:Parameter Name="transection_date_time" Type="String" />
+                                        <asp:Parameter Name="total_price" Type="Int32" />
                                         <asp:Parameter Name="original_id" Type="Int32" />
                                         <asp:Parameter Name="original_full_name" Type="String" />
                                         <asp:Parameter Name="original_Order_Date" Type="String" />
-                                        <asp:Parameter Name="original_bank_code" Type="Int64" />
                                         <asp:Parameter Name="original_status" Type="String" />
+                                        <asp:Parameter Name="original_bank_code" Type="Int64" />
+                                        <asp:Parameter Name="original_transection_date_time" Type="String" />
+                                        <asp:Parameter Name="original_total_price" Type="Int32" />
                                     </UpdateParameters>
                                 </asp:SqlDataSource>
                                 
