@@ -97,6 +97,10 @@
                         	<li class="text-muted menu-title">Navigation</li>
 
                             <li class="">
+                                <a href="/Home.aspx" class="waves-effect waves-light"> Home Page </a>
+                            </li>
+
+                            <li class="">
                                 <a href="index.aspx" class="waves-effect waves-light active"> Dashboard </a>
                             </li>
 

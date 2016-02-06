@@ -17,6 +17,10 @@ namespace GemshopProject
         {
             string Userid = Context.User.Identity.GetUserId();
             Session["Userid"] = Userid;
+            if(Userid == null || Userid=="")
+            {
+                Response.Redirect("loginPage.aspx");
+            }
         }
 
 

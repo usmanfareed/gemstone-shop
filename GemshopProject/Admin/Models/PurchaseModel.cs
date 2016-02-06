@@ -43,7 +43,7 @@ namespace GemshopProject.Admin.Models
                 p.Products.ID = purchase.Products.ID;
                 p.Quantity = purchase.Quantity;
 
-                
+
 
                 db.SaveChanges();
                 return purchase.DateTime + "was successfully updated";
@@ -57,79 +57,98 @@ namespace GemshopProject.Admin.Models
 
         }
 
-        public string delete_purchase(int id)
+        public string delete_purchase_by_userid(string userid)
         {
 
+            ShopDBContext db = new ShopDBContext();
+            var items = (from x in db.Purchases
+                         where x.UsersID == userid
 
-            try
+                         select x);
+            foreach (var item in items)
             {
-                ShopDBContext db = new ShopDBContext();
-                Purchase p = db.Purchases.Find(id);
-
-                db.Purchases.Attach(p);
-                db.Purchases.Remove(p);
-                db.SaveChanges();
-
-                return p.DateTime + "was successfully deleted";
-
+                db.Purchases.Attach(item);
+                db.Purchases.Remove(item);
+                
             }
-            catch (Exception e)
-            {
-
-                return "Error" + e;
-
-            }
-
+            db.SaveChanges();
+            return "success";
         }
+    
 
-        public List<Purchase> get_ordersinCart (string userID)
+    public string delete_purchase(int id)
+    {
+
+
+        try
         {
             ShopDBContext db = new ShopDBContext();
-            List<Purchase> orders = (from x in db.Purchases
-                                     where x.UsersID == userID
-                                     orderby x.DateTime
-                                     select x).ToList();
-            return orders;
-        }
-        //public int get_amountofOrders(string userID)
-        //{
-        //    try
-        //    {
-        //        ShopDBContext db = new ShopDBContext();
-        //        int totalprice = (from x in db.Purchases
-        //                          where x.UsersID == userID
-        //                          && x.IsInCart
-        //                          select x.TotalPrice).Sum();
-        //        return totalprice;
-        //    }
-        //    catch  
-        //    {
+            Purchase p = db.Purchases.Find(id);
 
-        //        return 0;
-        //    }
-        //}
-        public void update_quantity(int id, int quantity)
-        {
-            ShopDBContext db = new ShopDBContext();
-            Purchase purchase = db.Purchases.Find(id);
-            purchase.Quantity = quantity;
-
+            db.Purchases.Attach(p);
+            db.Purchases.Remove(p);
             db.SaveChanges();
 
+            return p.DateTime + "was successfully deleted";
+
+        }
+        catch (Exception e)
+        {
+
+            return "Error" + e;
+
         }
 
-        public void mark_paid(List<Purchase> purchases)
+    }
+
+    public List<Purchase> get_ordersinCart(string userID)
+    {
+        ShopDBContext db = new ShopDBContext();
+        List<Purchase> orders = (from x in db.Purchases
+                                 where x.UsersID == userID
+                                 orderby x.DateTime
+                                 select x).ToList();
+        return orders;
+    }
+    //public int get_amountofOrders(string userID)
+    //{
+    //    try
+    //    {
+    //        ShopDBContext db = new ShopDBContext();
+    //        int totalprice = (from x in db.Purchases
+    //                          where x.UsersID == userID
+    //                          && x.IsInCart
+    //                          select x.TotalPrice).Sum();
+    //        return totalprice;
+    //    }
+    //    catch  
+    //    {
+
+    //        return 0;
+    //    }
+    //}
+    public void update_quantity(int id, int quantity)
+    {
+        ShopDBContext db = new ShopDBContext();
+        Purchase purchase = db.Purchases.Find(id);
+        purchase.Quantity = quantity;
+
+        db.SaveChanges();
+
+    }
+
+    public void mark_paid(List<Purchase> purchases)
+    {
+        ShopDBContext db = new ShopDBContext();
+        if (purchases != null)
         {
-            ShopDBContext db = new ShopDBContext();
-            if (purchases != null)
+            foreach (Purchase purchase in purchases)
             {
-                foreach(Purchase purchase in purchases)
-                {
-                    Purchase oldpurchase = db.Purchases.Find(purchase.ID);
-                    oldpurchase.DateTime = DateTime.Now.ToString();
-                }
-                db.SaveChanges();
+                Purchase oldpurchase = db.Purchases.Find(purchase.ID);
+                oldpurchase.DateTime = DateTime.Now.ToString();
             }
+            db.SaveChanges();
         }
     }
+}
 }

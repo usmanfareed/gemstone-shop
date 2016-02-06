@@ -44,6 +44,10 @@
                 {
                     value=1;
                 }
+                if(!(isNaN(value)))
+                {
+
+                
                 if(value <= max_quantity)
                 {
                 location.href = 'cart.aspx?id=' + id + '&quan=' + value;
@@ -51,6 +55,10 @@
                 else
                 {
                     alert("Selected quantity is more than Available Quantity")
+                }
+                }
+                else {
+                    alert("Please enter valid Quantity")
                 }
             });
             });

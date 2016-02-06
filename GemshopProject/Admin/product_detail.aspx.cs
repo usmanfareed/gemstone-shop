@@ -17,6 +17,7 @@ namespace GemshopProject.Admin
 
     public partial class product_detail : System.Web.UI.Page
     {
+        string path = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -36,9 +37,8 @@ namespace GemshopProject.Admin
         protected void createBtn_Click(object sender, EventArgs e)
         {
             ProductModel db = new ProductModel();
-            Product p = create_product();
             // this is will upload and save image to server
-            string path = null;
+            
             try
             {
                 
@@ -52,10 +52,12 @@ namespace GemshopProject.Admin
             }
             catch (Exception ex)
             {
-                StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                
             }
 
-
+            Product p = create_product();
+            if(p != null)
+            { 
             //Check if url contains id parameter 
             if (!String.IsNullOrWhiteSpace(Request.QueryString["id"]))
             {
@@ -70,7 +72,6 @@ namespace GemshopProject.Admin
                 }
                 else
                 {
-                    litStatus.Text = String.Format("<font style='color : red;'> Please Complete All the Fields </font>");
                 }
             }
             //if id donsnt exit create new row
@@ -89,6 +90,7 @@ namespace GemshopProject.Admin
                 {
                     litStatus.Text = String.Format("<font style='color : red;'> Please Complete All the Fields </font>");
                 }
+            }
             }
         }
 
@@ -114,7 +116,7 @@ namespace GemshopProject.Admin
 
         private Product create_product()
         {
-            if (!string.IsNullOrWhiteSpace(product_name.Text) && !string.IsNullOrWhiteSpace(product_price.Text) && !string.IsNullOrWhiteSpace(product_quantity.Text))
+            if (validation())
             {
                 DateTime date_added = DateTime.Now;
                 var product = new Product();
@@ -129,11 +131,47 @@ namespace GemshopProject.Admin
 
             else
             {
-                litStatus.Text = String.Format("<font style='color : red;'> Please Fill All the Remaining Fields </font>");
                 return null ;
             }
 
 
+        }
+
+
+        private bool validation()
+        {
+
+            int n;
+            if ((product_name.Text == "") || int.TryParse(product_name.Text, out n))
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Poduct Name field is empty or invalid </font>");
+                return false;
+            }
+            else if ((product_price.Text == "") || !(int.TryParse(product_price.Text, out n)))
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Product Price field is empty or invalid </font>");
+                return false;
+            }
+
+            else if ((product_quantity.Text == "") || !(int.TryParse(product_quantity.Text, out n)))
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Product Quantity field is empty or invalid </font>");
+                return false;
+            }
+            else if (product_description.Text == "")
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Product Description field is empty </font>");
+                return false;
+            }
+            else if (path== "" || path == null)
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Please Select Image </font>");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
 
@@ -142,10 +180,7 @@ namespace GemshopProject.Admin
 
 
 
-
-
-
-}
+    }
 }
 
 

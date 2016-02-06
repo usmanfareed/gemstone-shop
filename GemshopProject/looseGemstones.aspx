@@ -25,7 +25,7 @@
                         '<a href="product_detail.aspx?id=' + d[i].ID + '"><img src="' + d[i].Image + '" alt="Product 1" title=""></a></div>' +
                         '<h3 class="title">' + d[i].Name + '</h3>' +
                         ' <div class="cart" ><div class="price" style="left: 0px; text-align: left;"><div class="vert"> RS  ' + d[i].Price + '</div></div>' +
-                        '<a href="#" class="wishlist" style="left: 144px;"></a>' +
+                        '<a href="wishlist.aspx?id=' + d[i].ID + '" class="wishlist" style="left: 144px;"></a>' +
                         '<a href="cart.aspx?id=' + d[i].ID + '" class="bay" style="opacity: 1; transform: rotate(0deg)"><img src="img/bg_cart.png" alt="Buy" title=""></a></div><!-- .cart -->'
 
 )
@@ -118,3 +118,4 @@
     </section><!-- #main -->
 
 </asp:Content>
+

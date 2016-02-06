@@ -57,11 +57,16 @@
     <script>
         function update_quantity(e)
         {
+            
             var id = $(e).attr("id");
             var value = $(e).attr("value");
-            
+            if(!(isNaN(value)))
+                {
             location.href = 'cart.aspx?pur_id='+id+'&quan='+value;
-
+            }
+            else {
+                alert("Please enter valid Quantity")
+            }
 
         }
 

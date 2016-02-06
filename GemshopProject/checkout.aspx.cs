@@ -123,6 +123,7 @@ namespace GemshopProject
                         db.save_order_items(items);
                     }
 
+                    model.delete_purchase_by_userid(userid);
                     Response.Redirect("order_success.aspx");
 
 
