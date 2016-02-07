@@ -17,15 +17,12 @@ namespace GemshopProject.Models
         public int ID { get; set; }
         [Required]
         public string Name { get; set; }
-        [Required]
 
         public double Price { get; set; }
-        [Required]
        
         public int AvailableQuantity { get; set; }
         public string Description { get; set; }
         public string DateAdded { get; set; }
-        [Required]
 
         public string Image { get; set; }
         public string DateUpdated { get; set; }

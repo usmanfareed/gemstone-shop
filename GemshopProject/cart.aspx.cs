@@ -28,7 +28,7 @@ namespace GemshopProject
             
             if (!string.IsNullOrWhiteSpace(Request.QueryString["id"]))
             {
-                int id = Convert.ToInt32(Request.QueryString["id"]);
+                    int id = Convert.ToInt32(Request.QueryString["id"]);
                     int value = 1;
                     int quan =0;
                     if(!string.IsNullOrWhiteSpace(Request.QueryString["quan"]))
@@ -55,8 +55,18 @@ namespace GemshopProject
 
 
                     //Session["avail_quantity"] = available_quantity;
+                    if (value > available_quantity && available_quantity == 0 || quan > available_quantity && available_quantity == 0 )
+                    {
 
-                    if (purchaseid == 0)
+                        //MessageBox.Show("Sorry Product is Out of Stock");
+                        string script = "alert('Sorry Product is Out of Stock');";
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script, true);
+                        
+                        string site = String.Format("product_detail.aspx?id={0}", id);
+                        Response.Redirect(site);
+                    }
+
+                    else if (purchaseid == 0 )
                     {
                         model.insert_purchase(cart);
                     }
@@ -65,7 +75,8 @@ namespace GemshopProject
                     {
                         if (quan > available_quantity)
                         {
-                            MessageBox.Show("Quantity selected is more than Available Quantity");
+                            string script = "alert('Quantity selected is more than Available Quantity');";
+                            ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script, true);
                         }
                         else
                         { 
@@ -75,7 +86,8 @@ namespace GemshopProject
 
                     else if (purchasequantity == available_quantity)
                     {
-                        MessageBox.Show("Product Quantity is already equal to Available Quantity");
+                        string script = "alert('Product Quantity is already equal to Available Quantity');";
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script, true);
                     }
                     else
                     {
@@ -155,7 +167,8 @@ namespace GemshopProject
                 cart.price = product.Price;
                 cart.avail_quantity = product.AvailableQuantity;
                 cart.quantity = purchase.Quantity;
-                cart.purchaseid = product.ID ;
+                cart.purchaseid = purchase.ID;
+                cart.productid = product.ID;
                 info.Add(cart);
                 
             }
@@ -173,7 +186,7 @@ namespace GemshopProject
 
             public int quantity { get; set; }
             public int avail_quantity { get; set; }
-
+            public int productid { get; set; }
             public double price { get; set; }
             public int purchaseid { get; set; }
 

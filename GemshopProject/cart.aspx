@@ -23,10 +23,10 @@
                     (totalprice) += (subtotal);
                     $items = $('<tr >'+
                            
-                           ' <td class="images"><a href="product_page.html"><img src="' + d[i].image + '" alt="Product 10" title=""></a></td>' +
+                           ' <td class="images"><a href="product_detail.aspx?id=' + d[i].productid + '"><img src="' + d[i].image + '" alt="Product 10" title=""></a></td>' +
                            ' <td class="name">' + d[i].name + ' </td>' +
                            ' <td class="price">' + d[i].price + '</td>' +
-                           ' <td  class="qty"> <input id="' + d[i].purchaseid + '"  type="text" class="update" onChange="update_quantity(this);" value="' + d[i].quantity + '" /> </td>' +
+                           ' <td  class="qty"> <input id="' + d[i].productid + '"  type="text" class="update" onChange="update_quantity(this);" value="' + d[i].quantity + '" /> </td>' +
                            ' <td  class="qty"> ' + d[i].avail_quantity + ' </td>' +
                            ' <td class="subtotal">' + subtotal + '</td>' +
                            ' <td class="close"><a title="close" class="close" href="cart.aspx?del=' + d[i].purchaseid + '"></a></td>' +

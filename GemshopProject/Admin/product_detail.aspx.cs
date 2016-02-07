@@ -69,10 +69,9 @@ namespace GemshopProject.Admin
 
                     p.Image = path;
                     db.update_product(id, p);
-                }
-                else
-                {
-                }
+                        Response.Redirect("all_product.aspx");
+                    }
+                
             }
             //if id donsnt exit create new row
             else
@@ -108,7 +107,7 @@ namespace GemshopProject.Admin
             product_price.Text = Convert.ToString(product.Price);
             product_quantity.Text = Convert.ToString(product.AvailableQuantity);
             product_description.Text = product.Description;
-
+            Session["img_path"] = product.Image;
             // set dropdown values
             droplist.SelectedValue = Convert.ToString(product.CategoryID);
         }
@@ -116,7 +115,7 @@ namespace GemshopProject.Admin
 
         private Product create_product()
         {
-            if (validation())
+            if (validation() )
             {
                 DateTime date_added = DateTime.Now;
                 var product = new Product();
@@ -140,7 +139,7 @@ namespace GemshopProject.Admin
 
         private bool validation()
         {
-
+            string img_path = Convert.ToString(HttpContext.Current.Session["img_path"]);
             int n;
             if ((product_name.Text == "") || int.TryParse(product_name.Text, out n))
             {
@@ -163,9 +162,11 @@ namespace GemshopProject.Admin
                 litStatus.Text = String.Format("<font style='color : red;'> Product Description field is empty </font>");
                 return false;
             }
-            else if (path== "" || path == null)
+
+            else if ((path== "" || path == null) && img_path == "")
             {
                 litStatus.Text = String.Format("<font style='color : red;'> Please Select Image </font>");
+                img_path = "";
                 return false;
             }
             else

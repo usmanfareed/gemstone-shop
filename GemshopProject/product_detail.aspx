@@ -6,6 +6,7 @@
         $(document).ready(function () {
             var id;
             var max_quantity;
+            var available;
             $.ajax({
                 url: "product_detail.aspx/get_product",
                 data: "{}",
@@ -16,6 +17,11 @@
             });
             function OnSuccess(data) {
                 data = data.d;
+                if (data[0].AvailableQuantity == 0)
+                {
+                    data[0].AvailableQuantity="Out of Stock";
+                    available="Out of Stock";
+                }
                 $("#heading").append('<h1 class="page_title">' + data[0].Name + '</h1>'),
                 $("#pro_image").append('<img src="' + data[0].Image + '" alt="Product 1" title="" style="width: 100%"></a>'),
                 $("#pro_price").append(' <div class="price">RS  ' + data[0].Price + '</div><!-- .price -->'),
@@ -39,28 +45,37 @@
 
                 e.preventDefault();
               
-                var value = $("#select_quantity").val();
-                if(value == null)
+                if (available != "Out of Stock")
                 {
-                    value=1;
-                }
-                if(!(isNaN(value)))
-                {
+                    var value = $("#select_quantity").val();
+                    if(value == null)
+                    {
+                        value=1;
+                    }
+
+                    if(!(isNaN(value)))
+                    {
 
                 
-                if(value <= max_quantity)
-                {
-                location.href = 'cart.aspx?id=' + id + '&quan=' + value;
+                        if(value <= max_quantity)
+                        {
+                            location.href = 'cart.aspx?id=' + id + '&quan=' + value;
+                        }
+                        else
+                        {
+                            alert("Selected quantity is more than Available Quantity")
+                        }
+                    }
+                    else {
+                        alert("Please enter valid Quantity")
+                    }
                 }
                 else
                 {
-                    alert("Selected quantity is more than Available Quantity")
+                    alert("This product is Out of Stock")
                 }
-                }
-                else {
-                    alert("Please enter valid Quantity")
-                }
-            });
+                });
+
             });
       
             </script>
