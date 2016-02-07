@@ -36,7 +36,6 @@
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"/>
                             <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
                             <asp:BoundField DataField="AvailableQuantity" HeaderText="Quantity" SortExpression="AvailableQuantity" />
-                            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                             <asp:BoundField DataField="Image" HeaderText="Image" SortExpression="Image" />
                             <asp:BoundField DataField="DateUpdated" HeaderText="DateUpdated" SortExpression="DateUpdated" />
                             <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" />

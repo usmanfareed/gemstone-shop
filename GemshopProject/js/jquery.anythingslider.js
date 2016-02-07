@@ -70,7 +70,7 @@
 
 			// Set up a few defaults & get details
 			base.flag    = false; // event flag to prevent multiple calls (used in control click/focusin)
-			if (o.autoPlayLocked) { o.autoPlay = true; } // if autoplay is locked, start playing
+		    o.autoPlay = true;  // if autoplay is locked, start playing
 			base.playing = o.autoPlay; // slideshow state; removed "startStopped" option
 			base.slideshow = false; // slideshow flag needed to correctly trigger slideshow events
 			base.hovered = false; // actively hovering over the slider
