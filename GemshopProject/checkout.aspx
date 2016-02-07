@@ -45,7 +45,10 @@
                             <strong>Shipping Address:</strong><sup>*</sup><br>
                             <asp:TextBox type="text" name="" id="address" runat="server"></asp:TextBox>
                         </div>
-
+                        <div id="totalprice" runat="server" class="">
+                            <strong>Total Price:</strong><sup></sup><br>
+                            <asp:TextBox type="text" name="" id="total_price" runat="server" ReadOnly="true" ></asp:TextBox>
+                        </div>
                         <div id="bankdiv" runat="server" class="">
                             <strong>Bank Transaction Code:</strong><sup>*</sup><br>
                             <asp:TextBox type="text" name="" id="code" runat="server"></asp:TextBox>

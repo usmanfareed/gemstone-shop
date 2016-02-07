@@ -67,6 +67,24 @@ namespace GemshopProject {
         protected global::System.Web.UI.WebControls.TextBox address;
         
         /// <summary>
+        /// totalprice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl totalprice;
+        
+        /// <summary>
+        /// total_price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox total_price;
+        
+        /// <summary>
         /// bankdiv control.
         /// </summary>
         /// <remarks>

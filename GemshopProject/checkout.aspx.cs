@@ -52,6 +52,7 @@ namespace GemshopProject
 
         private void FillPage(string id)
         {
+            string totalprice = Convert.ToString(HttpContext.Current.Session["total_price"]);
             // get data from the given id
 
             UserinfoModel db = new UserinfoModel();
@@ -63,7 +64,7 @@ namespace GemshopProject
             email.Text = user.Email;
             ContactNum.Text = Convert.ToString(user.Contact);
             address.Text = user.Address;
-
+            total_price.Text = totalprice;
 
         }
 
@@ -141,6 +142,7 @@ namespace GemshopProject
             createBtn.Text = "Save";
             bankdiv.Visible = false;
             trans_date_time.Visible = false;
+            totalprice.Visible = false;
 
             // get data from the given id
             OrderModel db = new OrderModel();

@@ -45,6 +45,8 @@
             }
         });
 
+
+
         $(document).ready(function () {
             $("#proceed").click(function (e) {
                 e.preventDefault();
@@ -75,9 +77,7 @@
 
     <script>
         
-            
-
-
+           
     </script>
 <%--    <script>
 
@@ -135,7 +135,7 @@
                                 <table class="subtotal">
                                     
                                     <tr class="grand_total">
-                                        <td>Grand Total</td><td id="total_price" class="price">$1, 500.00</td>
+                                        <td>Grand Total</td><td id="total_price" class="price"></td><button id="update" style="width:53%;height: 45px;background: -moz-MenuHover" class="checkout">Update Total</button>
                                     </tr>
                                 </table>
                                 <button id="proceed" class="checkout">PROCEED TO CHECKOUT <img src="img/checkout.png" alt="" title=""></button>
