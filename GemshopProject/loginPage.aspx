@@ -58,7 +58,7 @@
 		
                     <div class="grid_6 registed_form">
 			<div class="registed">
-			    <h2>Registed Customers</h2>
+			    <h2>Registered Customers</h2>
 			    <p>If you have an account with us, please log in.</p>
                 <p>
                     <asp:Literal ID="litStatus" runat="server"></asp:Literal>

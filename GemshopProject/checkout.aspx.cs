@@ -27,6 +27,11 @@ namespace GemshopProject
                     getdata(id);
                 }
             }
+            if (!string.IsNullOrWhiteSpace(Request.QueryString["total_price"]))
+            {
+                string price = Convert.ToString(Request.QueryString["total_price"]);
+                Session["total_price"] = price;
+            }
 
             if (Context.User.Identity.GetUserId() != null && HttpContext.Current.Session["customerid"] == null)
             {
@@ -38,11 +43,7 @@ namespace GemshopProject
             {
                 Response.Redirect("loginPage.aspx");
             }
-            if (!string.IsNullOrWhiteSpace(Request.QueryString["total_price"]))
-            {
-                string price = Convert.ToString(Request.QueryString["total_price"]);
-                Session["total_price"] = price;
-            }
+            
 
 
 

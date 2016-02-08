@@ -18,7 +18,7 @@
 
                 <div class="grid_6 registed_form customDivSize">
                     <div class="registed">
-                        <h2>Registered Customers</h2>
+                        <h2>Customer Registration</h2>
                                         <asp:Literal ID="litStatus" runat="server"></asp:Literal>
 
                         <p>If you have an account with us, please log in.</p>
