@@ -87,7 +87,7 @@
     <section id="main">
         <div class="container_12">
             <div id="content" class="grid_9">
-                <h1 class="page_title">LOOSE GEMSTONES</h1>
+                <h1 class="page_title">GEMSTONES</h1>
              <div class="clear"></div>
 
                 <div id="product_grid" class="products catalog negative-grid">
