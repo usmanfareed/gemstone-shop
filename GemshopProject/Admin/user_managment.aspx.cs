@@ -11,7 +11,7 @@ namespace GemshopProject.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SqlDataSource2.DeleteParameters["AuthID"].DefaultValue = "1";
         }
     }
 }

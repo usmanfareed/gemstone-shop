@@ -36,7 +36,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <asp:GridView ID="CategoriesGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="100%" DataKeyNames="ID">
+                                <asp:GridView ID="CategoriesGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="100%" DataKeyNames="ID,AuthID">
                                     <Columns>
                                         
                                         
@@ -60,11 +60,17 @@
 
                                     </Columns>
                                 </asp:GridView>
-                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=GemshopDatabase;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [ID], [FullName], [Email], [Contact], [Address], [reg_Date] FROM [Users]" DeleteCommand="Delete  FROM [Users]
-where  [ID] = @ID" InsertCommand="INSERT INTO [Users] ( [FullName] ,[Email],[Contact],[Address] ) VALUES (@FullName, @Email, @Contact, @Address)" UpdateCommand="UPDATE [Users] SET  [FullName] = @FullName, [Email] = @Email, [Contact] = @Contact, [Address] = @Address
+                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GemshopDatabaseConnectionString %>" SelectCommand="SELECT [ID], [FullName],[AuthID],[Email], [Contact], [Address], [reg_Date] FROM [Users]" DeleteCommand="Delete  FROM [GemshopDatabase].[dbo].[Users] 
+        
+where  [AuthID] = @AuthID
+
+Delete
+FROM [GemshopDatabase].[dbo].[AspNetUsers]
+
+ where [Id] = @AuthID" InsertCommand="INSERT INTO [Users] ( [FullName] ,[Email],[Contact],[Address] ) VALUES (@FullName, @Email, @Contact, @Address)" UpdateCommand="UPDATE [Users] SET  [FullName] = @FullName, [Email] = @Email, [Contact] = @Contact, [Address] = @Address
  WHERE [ID] = @ID">
                                     <DeleteParameters>
-                                        <asp:Parameter Name="ID" />
+                                        <asp:Parameter Name="AuthID"  />
                                     </DeleteParameters>
                                     <InsertParameters>
                                         <asp:Parameter Name="FullName" />
