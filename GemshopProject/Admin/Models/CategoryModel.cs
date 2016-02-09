@@ -97,6 +97,13 @@ namespace GemshopProject.Admin.Models
 
         }
 
+        public Category get_category_by_id (int id)
+        {
+            ShopDBContext db = new ShopDBContext();
+            Category c = db.Categories.Find(id);
+            return c;
+        }
+
 
     }
 }

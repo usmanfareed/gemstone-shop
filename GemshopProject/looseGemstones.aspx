@@ -1,8 +1,8 @@
-﻿<%@ Page Title="looseGemstones" Language="C#" MasterPageFile="~/Index.master" AutoEventWireup="true" CodeFile="looseGemstones.aspx.cs" Inherits="looseGemstones" %>
+﻿<%@ Page Title="looseGemstones" Language="C#" MasterPageFile="~/Index.master" AutoEventWireup="true" Inherits="looseGemstones" Codebehind="looseGemstones.aspx.cs" %>
 
 <asp:Content ID="looseGemstones" ContentPlaceHolderID="IndexBody" Runat="Server">
 
-
+    
 
         <script>
         //this script will populate the products data from cs class to the home page
@@ -75,7 +75,6 @@
     </script>
 
 
-
       <div class="breadcrumbs">
         <div class="container_12">
             <div class="grid_12">
@@ -87,12 +86,14 @@
     <section id="main">
         <div class="container_12">
             <div id="content" class="grid_9">
-                <h1 class="page_title">GEMSTONES</h1>
+                <h1 class="page_title" runat="server"  id="heading" >GEMSTONES</h1>
+                <asp:Label ID="category_heading" runat="server" Text=""></asp:Label>
+                
              <div class="clear"></div>
 
                 <div id="product_grid" class="products catalog negative-grid">
             
-
+                    
                     
 
             </div><!-- #content -->

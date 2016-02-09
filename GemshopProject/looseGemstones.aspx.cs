@@ -16,6 +16,14 @@ public partial class looseGemstones : System.Web.UI.Page
         {
             string cat_id = Request.QueryString["cat_id"];
             Session["cat_id"] = cat_id;
+
+            int catid = Convert.ToInt32(cat_id);
+            CategoryModel categorymodel = new CategoryModel();
+            Category get_by_catid = categorymodel.get_category_by_id(catid);
+            if (catid == get_by_catid.ID)
+            {
+                heading.InnerText = get_by_catid.Name;
+            }
         }
         else
         {
@@ -32,13 +40,16 @@ public partial class looseGemstones : System.Web.UI.Page
     public static List<Category> fill_page()
     {  // this class will fetch all the Category data from class to home page
 
+        int cat_id = Convert.ToInt32(HttpContext.Current.Session["cat_id"]);
 
         CategoryModel categorymodel = new CategoryModel();
             List<Category> categories = new List<Category>();
             categories = categorymodel.get_all_categories();
-
             return categories;
-        
+
+
+         
+
  
     }
 
@@ -61,6 +72,7 @@ public partial class looseGemstones : System.Web.UI.Page
                 ProductModel productmodel = new ProductModel();
                 List<Product> products = new List<Product>();
                 products = productmodel.get_product_by_category(cat_id);
+               
 
                 return products;
             }
