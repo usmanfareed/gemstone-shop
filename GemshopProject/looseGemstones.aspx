@@ -14,9 +14,9 @@
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
-                success: OnSuccess,
+                success: onSuccess,
             });
-            function OnSuccess(data) {
+            function onSuccess(data) {
                 d = data.d;
                 
                 var $this = $(this);
