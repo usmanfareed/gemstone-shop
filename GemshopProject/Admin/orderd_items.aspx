@@ -6,7 +6,7 @@
 
                     <form id="form4" runat="server" >
 
-                <div class="content-page" style="overflow:auto">
+                <div class="content-page" >
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
@@ -29,7 +29,7 @@
                 <footer class="footer text-right">
                 </footer>
 
-                    <asp:GridView CssClass="table table-bordered dataTable no-footer" ID="odered_items_Grid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                    <asp:GridView class="user_table"  CssClass="table table-bordered dataTable no-footer" ID="odered_items_Grid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1"  RowStyle-Wrap="false">
                         <Columns>
                             <asp:BoundField DataField="ordersID" HeaderText="ordersID" SortExpression="ordersID" />
                             <asp:BoundField DataField="ID" HeaderText="Product ID" SortExpression="ID" InsertVisible="False" ReadOnly="True"/>
@@ -87,8 +87,8 @@ WHERE [ID] = @ID">
                     </asp:SqlDataSource>
 
             </div>
-
-
+                      </div>
+                      </div>
                 </form>
 
 

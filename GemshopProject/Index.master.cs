@@ -20,6 +20,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
             logout.Visible = true;
             litStatus.Visible = true;
+
+            orderstatus_button.Visible = true;
+            wishlist_button.Visible = true;
+            cart_button.Visible = true;
         }
         else
         {
@@ -29,6 +33,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
             logout.Visible = false;
             litStatus.Visible = false;
+            orderstatus_button.Visible = false;
+            wishlist_button.Visible = false;
+            cart_button.Visible = false;
+
 
         }
 

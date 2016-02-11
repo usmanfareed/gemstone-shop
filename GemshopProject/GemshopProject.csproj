@@ -437,6 +437,7 @@
     <Content Include="Admin\assets\js\jquery.core.js" />
     <Content Include="Admin\assets\js\jquery.min.js" />
     <Content Include="Admin\assets\js\jquery.nicescroll.js" />
+    <Content Include="Admin\assets\js\jquery.responsivetable.js" />
     <Content Include="Admin\assets\js\jquery.scrollTo.min.js" />
     <Content Include="Admin\assets\js\jquery.slimscroll.js" />
     <Content Include="Admin\assets\js\modernizr.min.js" />

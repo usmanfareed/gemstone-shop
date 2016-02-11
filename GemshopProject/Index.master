@@ -99,21 +99,21 @@
                 <div class="top_header">
 
                     <ul id="cart_nav">
-                         <li>
+                         <li id="orderstatus_button" runat="server">
                   <a class="cart_li" style="background-color:lightgray;margin-left:2px;padding-right:6%;padding-left: 5%;color: windowtext" href="order_status.aspx">
                    <img title="" alt="Buy" src="../img/compare.png" />
                       Order Status
                     </a>
                       
                         </li>
-                        <li>
+                        <li id="wishlist_button"  runat="server">
                   <a class="cart_li" style="background-color:slateblue;margin-left:2px;color: white" href="wishlist.aspx">
                    <img title="" alt="Buy" src="../img/wishlist.png" />
                       Wishlist
                     </a>
                       
                         </li>
-                        <li>
+                        <li id="cart_button"  runat="server">
                             <a class="cart_li" style="background-color:darksalmon;color: white" href="cart.aspx">
                                 <div class="cart_ico"></div>
                                 Cart

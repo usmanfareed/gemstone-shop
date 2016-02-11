@@ -2,8 +2,11 @@
 
 <!DOCTYPE html>
 
-<<html>
-    
+<html>
+
+
+    <meta name="viewport" 
+    content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width"> 
 <!-- Mirrored from coderthemes.com/ubold_1.1/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 30 Nov 2015 04:03:44 GMT -->
 <head>
       
@@ -48,6 +51,14 @@
         });
     </script>
 --%>
+    
+    <script>
+        $(document).ready(function() {
+            // Default settings
+            $('.user_table').responsiveTable();
+        });
+    </script>
+    
 
 
     </head>
@@ -67,6 +78,12 @@
                     <div class="container">
                         <div class="">
                           
+                            <div class="pull-left">
+                                <button class="button-menu-mobile open-left">
+                                    <i class="ion-navicon"></i>
+                                </button>
+                                <span class="clearfix"></span>
+                            </div>
 
                             <ul style="text-align:center;color:darksalmon">
                                     
@@ -82,13 +99,14 @@
                         <!--/.nav-collapse -->
                     </div>
                 </div>
-            </div>
+            
             <!-- Top Bar End -->
 
 
             <!-- ========== Left Sidebar Start ========== -->
 
             <div class="left side-menu">
+                <div class="slimScrollDiv">
                 <div class="sidebar-inner slimscrollleft">
                     <!--- Divider -->
                     <div id="sidebar-menu">
@@ -143,6 +161,7 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
+                    </div>
             </div>
             <!-- Left Sidebar End -->
 
@@ -281,7 +300,6 @@
                 </div>
             </div>
             <!-- /Right-bar -->
-
         </div>
         <!-- END wrapper -->
 
@@ -321,6 +339,7 @@
 
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
+            <script src="assets/js/jquery.responsivetable.js"></script> 
 
         <script type="text/javascript">
             jQuery(document).ready(function($) {

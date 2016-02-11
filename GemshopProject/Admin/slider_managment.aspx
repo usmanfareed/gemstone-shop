@@ -26,7 +26,7 @@
 
                         <div class="panel">
                             
-                            <div class="panel-body" style="overflow:auto">
+                            <div class="panel-body" >
                                 <div class="row">
                                     <div class="">
                                         <div class="m-b-30">
@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <asp:GridView ID="SliderGrid" runat="server" AllowPaging="True" AllowSorting="True" OnRowDeleting="SliderGrid_RowDeleting" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="100%" DataKeyNames="ID">
+                                <asp:GridView class="user_table"  ID="SliderGrid" runat="server" AllowPaging="True" AllowSorting="True" OnRowDeleting="SliderGrid_RowDeleting" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="100%" DataKeyNames="ID"  RowStyle-Wrap="false">
                                     <Columns>
                                         
                                         

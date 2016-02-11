@@ -36,7 +36,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <asp:GridView ID="CategoriesGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="100%" DataKeyNames="ID,AuthID">
+                                <asp:GridView ID="CategoriesGrid" class="user_table" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="100%" DataKeyNames="ID,AuthID" RowStyle-Wrap="false">
                                     <Columns>
                                         
                                         

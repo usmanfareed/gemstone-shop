@@ -92,7 +92,7 @@
     </script>
 
 
-    			<div class="content-page" style="overflow:auto">
+    			<div class="content-page" >
 				<!-- Start content -->
 				<div class="content">
 					<div class="container">
@@ -125,7 +125,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <asp:GridView ID="CategoriesGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" Width="100%" OnRowDataBound="CategoriesGrid_RowDataBound">
+                                <asp:GridView class="user_table"  ID="CategoriesGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" Width="100%" OnRowDataBound="CategoriesGrid_RowDataBound"  RowStyle-Wrap="false">
                                     <Columns>
                                         <asp:BoundField DataField="ID" HeaderText="  ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
                                         <asp:BoundField DataField="Name" HeaderText="  Name" SortExpression="Name" />
@@ -168,7 +168,7 @@ where  [ID] = @ID" InsertCommand="INSERT INTO [GemshopDatabase].[dbo].[Categorie
 
                 </footer>
 
-            </div>
+          
 
 
       <!-- Modal Add Category -->
@@ -221,8 +221,8 @@ where  [ID] = @ID" InsertCommand="INSERT INTO [GemshopDatabase].[dbo].[Categorie
             <!-- end Modal -->
 
 
-    
+      </div>
         
-
+                   </div>
             </form>
 </asp:Content>

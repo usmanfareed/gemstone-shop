@@ -2,7 +2,7 @@
 <asp:Content ID="product_order" ContentPlaceHolderID="IndexBody" runat="server">
         <form id="form2" runat="server" >
 
-                <div class="content-page" style="overflow:auto">
+                <div class="content-page" >
                 <!-- Start content -->
                 				<div class="content">
 					<div class="container">
@@ -27,7 +27,7 @@
                                 <div class="row">
                                    
                                 </div>
-                                <asp:GridView ID="Orders_grid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="100%" DataKeyNames="id" RowStyle-Wrap="false" OnRowDataBound="Orders_grid_RowDataBound">
+                                <asp:GridView class="user_table"  ID="Orders_grid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="100%" DataKeyNames="id" RowStyle-Wrap="false" OnRowDataBound="Orders_grid_RowDataBound" >
                                     <Columns>
                                         
                                        
@@ -110,7 +110,7 @@
                 <footer class="footer text-right">
                     2015 © Ubold.
                 </footer>
-
+                      </div>
             </form>
 
 </asp:Content>

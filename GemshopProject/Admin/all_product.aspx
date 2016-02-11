@@ -3,7 +3,7 @@
 
                 <form id="form1" runat="server">
 
-                <div class="content-page" style="overflow:auto">
+                <div class="content-page" >
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
@@ -30,7 +30,7 @@
                 <footer class="footer text-right">
                 </footer>
 
-                    <asp:GridView CssClass="table table-bordered dataTable no-footer" ID="ProductsGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="90%" OnRowEditing="ProductsGrid_RowEditing" OnRowDeleting="ProductsGrid_RowDeleting" DataKeyNames="ID" ForeColor="#666666" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" OnRowDataBound="ProductsGrid_RowDataBound">
+                    <asp:GridView class="user_table"  ID="ProductsGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="90%" OnRowEditing="ProductsGrid_RowEditing" OnRowDeleting="ProductsGrid_RowDeleting" DataKeyNames="ID"  OnRowDataBound="ProductsGrid_RowDataBound"  RowStyle-Wrap="false">
                         <Columns>
                             <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"/>
@@ -109,7 +109,7 @@ WHERE [ID] = @ID">
                     </asp:SqlDataSource>
 
             </div>
-                    </div>
+                  </div>
 
                 </form>
 </asp:Content>

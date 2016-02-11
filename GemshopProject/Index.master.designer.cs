@@ -57,6 +57,33 @@ public partial class MasterPage {
     protected global::System.Web.UI.WebControls.LinkButton logout;
     
     /// <summary>
+    /// orderstatus_button control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl orderstatus_button;
+    
+    /// <summary>
+    /// wishlist_button control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl wishlist_button;
+    
+    /// <summary>
+    /// cart_button control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl cart_button;
+    
+    /// <summary>
     /// dashboard control.
     /// </summary>
     /// <remarks>
