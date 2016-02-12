@@ -21,7 +21,7 @@
                 for (i = 0; i < d.length; i++) {
                     var subtotal = (d[i].price) * (d[i].quantity);
                     (totalprice) += (subtotal);
-                    $items = $('<tr >'+
+                    $items = $('<tr>' +
                            
                            ' <td class="images"><a href="product_detail.aspx?id=' + d[i].productid + '"><img src="' + d[i].image + '" alt="Product 10" title=""></a></td>' +
                            ' <td class="name">' + d[i].name + ' </td>' +
@@ -68,7 +68,7 @@
             location.href = 'cart.aspx?id='+id+'&quantity='+value;
             }
             else {
-                alert("Please enter valid Quantity")
+                alert("Please enter valid Quantity");
             }
 
         }
@@ -114,8 +114,8 @@
                 <header>
                     <h1 class="page_title">Shopping cart</h1>
                 </header>
-                <article>
-                    <table id="cart_items" class="cart_product">
+                <article style="overflow: auto">
+                    <table id="cart_items"   class="cart_product">
                         <tr class="bg">
                             <th class="images"></th>
                             <th class="name">Product Name</th>
@@ -132,7 +132,7 @@
                
                         <div class="grid_4" style="float:right">
                             <div class="bottom_block total">
-                                <table class="subtotal">
+                                <table class="subtotal" >
                                     
                                     <tr class="grand_total">
                                         <td>Grand Total</td><td id="total_price" class="price"></td><button id="update" style="width:53%;height: 45px;background: -moz-MenuHover" class="checkout">Update Total</button>

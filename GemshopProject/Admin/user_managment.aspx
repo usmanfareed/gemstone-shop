@@ -5,7 +5,7 @@
         			<form id="form1" runat="server" >
 
 
-        			<div class="content-page" style="overflow:auto">
+        			<div class="content-page" >
 				<!-- Start content -->
 				<div class="content">
 					<div class="container">
@@ -122,7 +122,7 @@ where  [ID] = @ID" InsertCommand="INSERT INTO [GemshopDatabase].[dbo].[Categorie
 
 
 
-
+</div>
                     </form>
 
 

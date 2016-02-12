@@ -104,7 +104,7 @@
     </script>
 
 
-    <div class="content-page" style="overflow:auto">
+    <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
@@ -226,20 +226,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
-                                </div>
-                            </div>
-
+                               
+                            
 
 
                     </div> <!-- container -->
                                
                 </div> <!-- content -->
 
-                <footer class="footer text-right">
-                    2015 © Ubold.
-                </footer>
-
+              
+    </div>
             </div>
+        </div>
         </form>
 </asp:Content>
