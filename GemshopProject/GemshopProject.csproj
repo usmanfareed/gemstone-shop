@@ -222,6 +222,10 @@
     <Compile Include="looseGemstones.aspx.designer.cs">
       <DependentUpon>looseGemstones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602141109577_AddProductSize.cs" />
+    <Compile Include="Migrations\201602141109577_AddProductSize.Designer.cs">
+      <DependentUpon>201602141109577_AddProductSize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_db.cs" />
     <Compile Include="Models\Category.cs" />
@@ -831,6 +835,11 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602141109577_AddProductSize.resx">
+      <DependentUpon>201602141109577_AddProductSize.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
