@@ -107,6 +107,7 @@ namespace GemshopProject.Admin
             product_price.Text = Convert.ToString(product.Price);
             product_quantity.Text = Convert.ToString(product.AvailableQuantity);
             product_description.Text = product.Description;
+            size.Text = Convert.ToString(product.size);
             Session["img_path"] = product.Image;
             // set dropdown values
             droplist.SelectedValue = Convert.ToString(product.CategoryID);
@@ -124,6 +125,7 @@ namespace GemshopProject.Admin
                 product.CategoryID = Convert.ToInt32(droplist.Text);
                 product.AvailableQuantity = Convert.ToInt32(product_quantity.Text);
                 product.DateAdded = Convert.ToString(date_added);
+                product.size = Convert.ToInt32(size.Text);
                 product.Description = product_description.Text;
                 return product;
             }
@@ -155,6 +157,12 @@ namespace GemshopProject.Admin
             else if ((product_quantity.Text == "") || !(int.TryParse(product_quantity.Text, out n)))
             {
                 litStatus.Text = String.Format("<font style='color : red;'> Product Quantity field is empty or invalid </font>");
+                return false;
+            }
+
+            else if ((size.Text == "") || !(int.TryParse(size.Text, out n)))
+            {
+                litStatus.Text = String.Format("<font style='color : red;'> Product Size field is empty or invalid </font>");
                 return false;
             }
             else if (product_description.Text == "")

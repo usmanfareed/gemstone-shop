@@ -47,6 +47,7 @@ namespace GemshopProject.Admin.Models
                 p.Description = product.Description;
                 p.CategoryID = product.CategoryID;
                 p.DateUpdated = product.DateUpdated;
+                p.size = product.size;
                 p.Description = product.Description;
 
                 if (product.Image != null)

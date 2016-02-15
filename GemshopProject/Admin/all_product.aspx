@@ -35,6 +35,7 @@
                             <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"/>
                             <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                             <asp:BoundField DataField="size" HeaderText="size" SortExpression="size" />
                             <asp:BoundField DataField="AvailableQuantity" HeaderText="Quantity" SortExpression="AvailableQuantity" />
                             <asp:BoundField DataField="Image" HeaderText="Image" SortExpression="Image" />
                             <asp:BoundField DataField="DateUpdated" HeaderText="DateUpdated" SortExpression="DateUpdated" />
@@ -68,15 +69,17 @@
 where  [ID] = @ID" InsertCommand="INSERT INTO [GemshopDatabase].[dbo].[Products] 
 ( [Name]
       ,[Price]
+      ,[size]
       ,[AvailableQuantity]
       ,[Description]
       ,[Image]
       ,[DateUpdated]
       ,[CategoryID]) 
-VALUES (@Name,@Price,@AvailableQuantity, @Description,@Image,@DateUpdated,@CategoryID)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT
+VALUES (@Name,@Price,@size,@AvailableQuantity, @Description,@Image,@DateUpdated,@CategoryID)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT
         [ID] 
       ,[Name]
       ,[Price]
+      ,[size]
       ,[AvailableQuantity]
       ,[Description]
       ,[Image]
@@ -90,6 +93,8 @@ WHERE [ID] = @ID">
                         <InsertParameters>
                             <asp:Parameter Name="Name" />
                             <asp:Parameter Name="Price" />
+                            <asp:Parameter Name="size" />
+
                             <asp:Parameter Name="AvailableQuantity" />
                             <asp:Parameter Name="Description" />
                             <asp:Parameter Name="Image" />

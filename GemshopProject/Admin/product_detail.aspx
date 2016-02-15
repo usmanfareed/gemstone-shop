@@ -172,6 +172,13 @@
                                                         <asp:TextBox id="product_quantity" class="form-control" runat="server"></asp:TextBox>
 
                                                     </div>
+                                                    
+                                                    <div class="form-group m-b-20">
+                                                        <label class="m-b-15">Size in Carat <span class="text-danger">*</span></label>
+                                                        <br/>
+                                                        <asp:TextBox id="size" class="form-control" runat="server"></asp:TextBox> 
+
+                                                    </div>
 
                                                     <div class="form-group m-b-20">
                                                         <label>Product Description <span class="text-danger">*</span></label>

@@ -27,7 +27,8 @@
                 $("#pro_price").append(' <div class="price">RS  ' + data[0].Price + '</div><!-- .price -->'),
                 $("#quantity").append(' <div class="availability" >Available Quantity: <span style="color:red">' + data[0].AvailableQuantity + '</span></div>'),
                 $("#description").append('<p>' + data[0].Description + '</p>');
-                $("#select_quantity").append('<option> Select Quantity </option>')
+                $("#select_quantity").append('<option> Select Quantity </option>');
+                $("#size").append(' <div class="availability" >Size : <span style="color:blue">' + data[0].size + '</span> Carat </div>');
                 //$("#cart").append('<a href="cart.aspx?id=' + data[0].ID + '"  class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>')
                 $("#cart").append('<a href="wishlist.aspx?id=' + data[0].ID + '"  class="wishlist"><span></span>Add to Wishlist</a>')
                 id = data[0].ID;
@@ -110,8 +111,13 @@
 			    
                             
                             <div class="parameter_selection">
+                                <label>Enter Quantity: </label><br />
                                 <input id="select_quantity" type="text" placeholder="Please Enter Quantity"/>
                                 <div class="clear"></div>
+                                <div class="clear"></div>
+                                
+                                <div id="size" class="availability_sku"> </div>
+
 			    </div><!-- .parameter_selection -->
 
 			    <div id="cart" class="cart">
